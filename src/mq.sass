@@ -1,0 +1,34 @@
+$primary: #848484 !default
+
+//Responsiveness
+//960, 1152 y 1344 elegidos porque son divisibles entre 12 y 16
+$tablet: 769px !default
+
+//960px container + 40px;
+$desktop: 1000px !default
+
+//1152px container + 40px
+$widescreen: 1192px !default
+
+//1344px container + 40px;
+$fullhd: 1384px !default
+
+=mobile
+    @media screen and (max-width: $tablet -1px)
+        @content
+
+=tablet
+    @media screen and (min-width: $tablet), print
+        @content
+
+=tablet-only
+    @media screen and (min-width: $tablet) and (max-width: $desktop -1px)
+        @content
+
+=desktop
+    @media screen and (min-width: $desktop), print
+        @content
+
+=desktop-only
+    @media screen and (min-width: $desktop) and (max-width: $widescreen -1px)
+        @content

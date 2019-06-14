@@ -1,0 +1,80 @@
+header {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  background: #202020;
+}
+
+.container {
+  width: 70%;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1000px), print {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+nav {
+  display: none;
+}
+
+@media screen and (min-width: 769px), print {
+  nav {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav ul li {
+    list-style: none;
+  }
+  nav ul li a {
+    line-height: 3rem;
+    padding: 0 1rem;
+    color: white;
+    position: relative;
+  }
+  nav ul li a:hover {
+    background: black;
+  }
+  nav ul li a:before {
+    content: "";
+    display: block;
+    background: white;
+    width: 0%;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  nav ul li a:hover::before {
+    width: 100%;
+    left: 0;
+  }
+}
+/*# sourceMappingURL=header.css.map */
