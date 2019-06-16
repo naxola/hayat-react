@@ -1,80 +1,80 @@
 header {
-  position: fixed;
   z-index: 20;
   width: 100%;
-  background: #202020;
 }
 
-.container {
-  width: 70%;
-  max-width: 120rem;
-  margin: 0 auto;
+header .header-container {
+  width: calc(100% - 2rem);
+  background: #202020;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 1rem;
 }
 
-@media screen and (min-width: 1000px), print {
-  .nav-toggle {
-    display: none;
-  }
+header .header-container .logo {
+  margin: 0 auto;
+  -ms-flex-preferred-size: 10rem;
+      flex-basis: 10rem;
 }
 
-nav {
-  display: none;
+header .header-container .cart span {
+  padding-left: 0.5rem;
 }
 
-@media screen and (min-width: 769px), print {
-  nav {
-    display: block;
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
-  nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  nav ul li {
-    list-style: none;
-  }
-  nav ul li a {
-    line-height: 3rem;
-    padding: 0 1rem;
-    color: white;
-    position: relative;
-  }
-  nav ul li a:hover {
-    background: black;
-  }
-  nav ul li a:before {
-    content: "";
-    display: block;
-    background: white;
-    width: 0%;
-    height: 1px;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  nav ul li a:hover::before {
-    width: 100%;
-    left: 0;
-  }
+header .header-container nav {
+  background: rgba(0, 0, 0, 0.9);
+  height: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  position: absolute;
+  top: 0;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  -webkit-transition: left 0.2s ease-out;
+  transition: left 0.2s ease-out;
+}
+
+header .header-container nav ul li {
+  list-style: none;
+  display: block;
+  font-weight: bold;
+}
+
+header .header-container nav ul li a {
+  line-height: 2rem;
+  padding-left: 1rem;
+}
+
+header .header-container nav ul li a:hover {
+  background: black;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.show {
+  left: 0;
+}
+
+.hidden {
+  left: -100%;
+}
+
+#banner {
+  background-color: #197bbd;
+  height: auto;
+  max-height: 4.5rem;
+}
+
+#banner p {
+  display: block;
+  margin: 0 auto;
+  padding: 0.9rem;
+  font-size: 0.8rem;
+  color: white;
 }
 /*# sourceMappingURL=header.css.map */
