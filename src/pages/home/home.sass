@@ -1,0 +1,70 @@
+@import ../../mq.sass
+@import ../../colors.sass
+
+.wrapper
+    display: grid
+    height: 100vh
+
+    section
+        padding: 2em
+
+        h1, h2, .read-btn
+            text-transform: uppercase
+            margin: 0
+
+        h1
+            font-size: 2.5rem
+            width: 100%
+
+            span
+                color: $primary-color
+                font-weight: bold
+
+        .primary
+            padding: 1.5em 1.5em 1.5em 1.5em
+            border: 1px solid $primary-color
+            display: inline-block
+            margin-top: 3em
+
+            &:hover
+                background-color: $primary-color
+
+        .clipper
+            overflow: hidden
+
+    .hero
+        padding-top: 10em
+        background-size: cover
+        background-image: url("http://shopscape.bold-themes.com/application/wp-content/uploads/sites/3/2016/04/hero_header.jpg")
+
+        p
+            width: 100%
+            font-size: 1.8em
+            margin-bottom: 0
+
++tablet
+    .wrapper
+        section
+            display: grid
+            grid-template-rows: auto
+            align-items: center
+
+            h1
+                width: 50%
+
+        .hero
+            //padding-top: 3em
+            padding-left: 8em
+            display: grid
+            grid-area: hero
+            grid-template-columns: 50% auto
+            grid-template-areas: "inner image-hero"
+
+            p
+                width: 80%
+
+            .inner
+                grid-area: inner
+
+            .image-hero
+                grid-area: image-hero
