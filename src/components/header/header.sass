@@ -5,12 +5,13 @@ header
     z-index: 20
     width: 100%
     background: $header-background
-    position: fixed
+    position: sticky
+    top: 0
 
     .header-container
         display: flex
         align-items: center
-        padding: 1
+        padding: 0 0.8rem
 
         +tablet
             justify-content: space-between
@@ -44,34 +45,34 @@ header
                         text-align: right
 
         nav
-            height: 100%
+            height: 100vh
             width: 100%
-
-            //width: calc(100% - 1rem)
             text-transform: uppercase
-            padding-left: 1rem
-            padding-top: 1rem
+            margin: 0
             order: -1
             transition: left 0.2s ease-out
             position: absolute
             top: 0
             font-weight: bold
+            background: $header-menu
 
-            ul
-                display: flex
-                flex-direction: column
-                padding-left: 1rem
-                height: 100%
-                background: blue
+            .nav-wrapper
+                padding: 1rem
 
-                li
-                    list-style: none
+                ul
+                    display: flex
+                    flex-direction: column
+                    padding-top: 1rem
+                    height: 100%
 
-                    a
-                        line-height: 2rem
+                    li
+                        list-style: none
 
-                        &:hover
-                            background: black
+                        a
+                            line-height: 2rem
+
+                            &:hover
+                                background: black
 
             +tablet
                 width: inherit
@@ -79,40 +80,45 @@ header
                 left: 0
                 transition: none
                 background: inherit
+                height: auto
                 order: 0
                 padding: 0
                 margin: 0
 
-                ul
-                    flex-direction: row !important
+                .nav-wrapper
+                    padding: 0
 
-                    li
-                        a
-                            line-height: 4.6875rem !important
-                            padding: 0 1rem
-                            color: white
-                            position: relative
-                            font-weight: lighter !important
+                    ul
+                        flex-direction: row !important
+                        padding: 0
 
-                            &:hover
-                                background: black
+                        li
+                            a
+                                line-height: 4.6875rem !important
+                                padding: 0 1rem
+                                color: white
+                                position: relative
+                                font-weight: lighter !important
 
-                            &:before
-                                content: ""
-                                display: block
-                                background: $primary-color
-                                width: 0%
-                                height: 2px
+                                &:hover
+                                    background: black
 
-                                //Desde aquí lo que hacemos es poner la linea abajo
-                                position: absolute
-                                left: 50%
-                                bottom: 0
-                                transition: all 0.3s
+                                &:before
+                                    content: ""
+                                    display: block
+                                    background: $primary-color
+                                    width: 0%
+                                    height: 2px
 
-                            &:hover::before
-                                width: 100%
-                                left: 0
+                                    //Desde aquí lo que hacemos es poner la linea abajo
+                                    position: absolute
+                                    left: 50%
+                                    bottom: 0
+                                    transition: all 0.3s
+
+                                &:hover::before
+                                    width: 100%
+                                    left: 0
 
 +tablet
     .nav-toggle
@@ -139,12 +145,13 @@ header
 header
     .banner
         background: #197bbd
-        padding: 0.5rem
+        padding: 1rem
 
         p
-            font-size: 0.8rem
+            font-size: 1rem
             color: white
             text-align: center
+            letter-spacing: 0.113rem
 
             span
-                font-weight: bold
+                font-weight: 700

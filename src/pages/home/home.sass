@@ -1,10 +1,11 @@
 @import ../../mq.sass
 @import ../../colors.sass
 
-.wrapper
-    display: grid
-    height: 100vh
+.container
+    width: 100%
+    margin: 0 auto
 
+.wrapper
     section
         padding: 2em
 
@@ -13,18 +14,23 @@
             margin: 0
 
         h1
-            font-size: 2.5rem
+            font-size: 2rem
+            padding: 0.5em 0
             width: 100%
 
             span
                 color: $primary-color
                 font-weight: bold
 
+        .read-btn
+            //float: right
+            display: inline-block
+            margin-top: 2em
+            margin-right: 3rem
+
         .primary
             padding: 1.5em 1.5em 1.5em 1.5em
             border: 1px solid $primary-color
-            display: inline-block
-            margin-top: 3em
 
             &:hover
                 background-color: $primary-color
@@ -37,34 +43,102 @@
         background-size: cover
         background-image: url("http://shopscape.bold-themes.com/application/wp-content/uploads/sites/3/2016/04/hero_header.jpg")
 
+        h1
+            color: $hero-text
+
         p
             width: 100%
-            font-size: 1.8em
+            font-size: 1.5em
             margin-bottom: 0
+            color: $hero-text
+
+        .image-hero
+            margin-top: 1em
+
+            img
+                width: 100%
+
+    .features
+        text-align: center
+
+        h1
+            padding-bottom: 0.8em
+
+    .product-description
+        background: $primary-color
+        color: $product-text
+        display: grid
+
+        h1
+            text-align: center
+
+    .purchase-overly--shown
+        visibility: visible !important
+        transform: translateY(0) !important
+        transition: transform 0.3s !important
+
+    .purchase-overly
+        will-change: transform
+        left: 0
+        right: 0
+        bottom: 0
+        position: fixed
+        background: #fff
+        z-index: 1000
+        box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.3)
+        transform: translateY(100%)
+        transition: transform 0.3s, visibility 0s 0.3s
+        visibility: hidden
+
+    .btn-buy
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-wrap: wrap
+        line-height: 1.167em
+        letter-spacing: 0.113rem
+        padding: 1rem 1.25rem 0.9375rem
+        text-transform: uppercase
+        margin: 0.75em
+        width: calc(100% - 1.5em)
+        background: $pay-button
+        color: $pay-button-text
+        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1)
+        cursor: pointer
+        border: 0
+
+        span
+            position: relative
+            top: -0.3em
+            font-size: 75%
+            margin-left: unset
 
 +tablet
     .wrapper
         section
             display: grid
-            grid-template-rows: auto
-            align-items: center
-
-            h1
-                width: 50%
 
         .hero
-            //padding-top: 3em
-            padding-left: 8em
-            display: grid
+            height: 100vh
+            padding-top: 3em
+            padding-left: 11.5em
             grid-area: hero
+            grid-template-rows: auto
+            align-items: center
             grid-template-columns: 50% auto
             grid-template-areas: "inner image-hero"
 
             p
-                width: 80%
+                width: 100%
 
             .inner
                 grid-area: inner
 
+                h1
+                    width: 90%
+
             .image-hero
-                grid-area: image-hero
+                img
+                    width: 70%
+                    top: 0
+                    left: 0

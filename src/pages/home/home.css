@@ -1,7 +1,6 @@
-.wrapper {
-  display: -ms-grid;
-  display: grid;
-  height: 100vh;
+.container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .wrapper section {
@@ -14,7 +13,8 @@
 }
 
 .wrapper section h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  padding: 0.5em 0;
   width: 100%;
 }
 
@@ -23,11 +23,15 @@
   font-weight: bold;
 }
 
+.wrapper section .read-btn {
+  display: inline-block;
+  margin-top: 2em;
+  margin-right: 3rem;
+}
+
 .wrapper section .primary {
   padding: 1.5em 1.5em 1.5em 1.5em;
   border: 1px solid #81d8d0;
-  display: inline-block;
-  margin-top: 3em;
 }
 
 .wrapper section .primary:hover {
@@ -44,46 +48,140 @@
   background-image: url("http://shopscape.bold-themes.com/application/wp-content/uploads/sites/3/2016/04/hero_header.jpg");
 }
 
+.wrapper .hero h1 {
+  color: white;
+}
+
 .wrapper .hero p {
   width: 100%;
-  font-size: 1.8em;
+  font-size: 1.5em;
   margin-bottom: 0;
+  color: white;
+}
+
+.wrapper .hero .image-hero {
+  margin-top: 1em;
+}
+
+.wrapper .hero .image-hero img {
+  width: 100%;
+}
+
+.wrapper .features {
+  text-align: center;
+}
+
+.wrapper .features h1 {
+  padding-bottom: 0.8em;
+}
+
+.wrapper .product-description {
+  background: #81d8d0;
+  color: #202020;
+  display: -ms-grid;
+  display: grid;
+}
+
+.wrapper .product-description h1 {
+  text-align: center;
+}
+
+.wrapper .purchase-overly--shown {
+  visibility: visible !important;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+  -webkit-transition: -webkit-transform 0.3s !important;
+  transition: -webkit-transform 0.3s !important;
+  transition: transform 0.3s !important;
+  transition: transform 0.3s, -webkit-transform 0.3s !important;
+}
+
+.wrapper .purchase-overly {
+  will-change: transform;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: #fff;
+  z-index: 1000;
+  -webkit-box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: visibility 0s 0.3s, -webkit-transform 0.3s;
+  transition: visibility 0s 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s, -webkit-transform 0.3s;
+  visibility: hidden;
+}
+
+.wrapper .btn-buy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  line-height: 1.167em;
+  letter-spacing: 0.113rem;
+  padding: 1rem 1.25rem 0.9375rem;
+  text-transform: uppercase;
+  margin: 0.75em;
+  width: calc(100% - 1.5em);
+  background: #74c344;
+  color: white;
+  -webkit-transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  border: 0;
+}
+
+.wrapper .btn-buy span {
+  position: relative;
+  top: -0.3em;
+  font-size: 75%;
+  margin-left: unset;
 }
 
 @media screen and (min-width: 769px), print {
   .wrapper section {
     display: -ms-grid;
     display: grid;
+  }
+  .wrapper .hero {
+    height: 100vh;
+    padding-top: 3em;
+    padding-left: 11.5em;
+    grid-area: hero;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .wrapper section h1 {
-    width: 50%;
-  }
-  .wrapper .hero {
-    padding-left: 8em;
-    display: -ms-grid;
-    display: grid;
-    grid-area: hero;
     -ms-grid-columns: 50% auto;
         grid-template-columns: 50% auto;
         grid-template-areas: "inner image-hero";
   }
   .wrapper .hero p {
-    width: 80%;
+    width: 100%;
   }
   .wrapper .hero .inner {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: inner;
   }
-  .wrapper .hero .image-hero {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: image-hero;
+  .wrapper .hero .inner h1 {
+    width: 90%;
+  }
+  .wrapper .hero .image-hero img {
+    width: 70%;
+    top: 0;
+    left: 0;
   }
 }
 /*# sourceMappingURL=home.css.map */
