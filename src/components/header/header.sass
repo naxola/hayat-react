@@ -2,11 +2,13 @@
 @import ../../colors.sass
 
 header
-    z-index: 20
+    z-index: 1000
     width: 100%
-    background: $header-background
     position: sticky
     top: 0
+
+    .header-container
+        background: $header-background
 
     .header-container
         display: flex
@@ -142,16 +144,15 @@ header
 .centered
     margin: 0 auto
 
-header
-    .banner
-        background: #197bbd
-        padding: 1rem
+.banner
+    background-color: $banner-header
+    padding: 1rem
 
-        p
-            font-size: 1rem
-            color: white
-            text-align: center
-            letter-spacing: 0.113rem
+    p
+        font-size: 1rem
+        color: $banner-text-color
+        text-align: center
+        letter-spacing: 0.113rem
 
-            span
-                font-weight: 700
+        span
+            font-weight: 700

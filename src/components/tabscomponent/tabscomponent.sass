@@ -1,0 +1,60 @@
+@import ../../mq.sass
+@import ../../colors.sass
+
+.tabs
+    display: flex
+    flex-direction: column
+
+    .tab-list
+        display: flex
+        align-items: center
+        justify-content: center
+        border-bottom: 1px solid #ccc
+        padding-left: 0
+
+    .tab-list-item
+        list-style: none
+        margin-bottom: -1px
+        padding: 0.5rem
+        text-transform: uppercase
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        font-size: 0.8em
+        text-align: center
+        color: grey
+        font-weight: 400
+
+        &:hover
+            background-color: #FAF3F2
+            border: solid #ccc
+            border-width: 0px 0px 1px 0px
+            margin-top: -1px
+            cursor: pointer
+
+    .tab-list-active
+        background-color: white
+        border: solid #ccc
+        border-width: 1px 1px 0 1px
+        margin-top: -1px
+        color: black
+
+        &:hover
+            background-color: white
+            border: solid #ccc
+            border-width: 1px 1px 0 1px
+
+    .tab-item-image
+        width: 20px
+        padding: 0.5rem
+
+    .tab-content
+        padding: 1em
+        color: #777777
+
+        h2
+            margin-bottom: 1em
+
+        p
+            margin-bottom: 1em

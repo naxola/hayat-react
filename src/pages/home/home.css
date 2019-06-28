@@ -4,12 +4,21 @@
 }
 
 .wrapper section {
-  padding: 2em;
+  padding: 1em;
 }
 
 .wrapper section h1, .wrapper section h2, .wrapper section .read-btn {
   text-transform: uppercase;
+  font-weight: 300;
   margin: 0;
+}
+
+.wrapper section span {
+  font-weight: 700;
+}
+
+.wrapper section p {
+  font-weight: 300;
 }
 
 .wrapper section h1 {
@@ -19,52 +28,79 @@
 }
 
 .wrapper section h1 span {
-  color: #81d8d0;
-  font-weight: bold;
+  color: red;
 }
 
-.wrapper section .read-btn {
+.wrapper .hero {
+  background-image: url("../../assets/hero-background.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.wrapper .hero .color-overlay {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.wrapper .hero .image-hero {
+  z-index: 2;
+}
+
+.wrapper .hero .image-hero img {
+  width: 100%;
+}
+
+.wrapper .hero .inner {
+  z-index: 2;
+  min-width: 60%;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.wrapper .hero .inner h1 {
+  color: black;
+}
+
+.wrapper .hero .inner h1 span {
+  color: red;
+  font-weight: 700;
+}
+
+.wrapper .hero .inner p {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: black;
+}
+
+.wrapper .hero .inner .read-btn {
   display: inline-block;
   margin-top: 2em;
   margin-right: 3rem;
 }
 
-.wrapper section .primary {
+.wrapper .hero .inner .primary {
   padding: 1.5em 1.5em 1.5em 1.5em;
-  border: 1px solid #81d8d0;
+  border: 1px solid #D6FFFF;
+  background-color: #D6FFFF;
+  color: grey;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-size: 1.4rem;
 }
 
-.wrapper section .primary:hover {
-  background-color: #81d8d0;
-}
-
-.wrapper section .clipper {
-  overflow: hidden;
-}
-
-.wrapper .hero {
-  padding-top: 10em;
-  background-size: cover;
-  background-image: url("http://shopscape.bold-themes.com/application/wp-content/uploads/sites/3/2016/04/hero_header.jpg");
-}
-
-.wrapper .hero h1 {
-  color: white;
-}
-
-.wrapper .hero p {
-  width: 100%;
-  font-size: 1.5em;
-  margin-bottom: 0;
-  color: white;
-}
-
-.wrapper .hero .image-hero {
-  margin-top: 1em;
-}
-
-.wrapper .hero .image-hero img {
-  width: 100%;
+.wrapper .hero .inner .primary:hover {
+  background-color: white;
 }
 
 .wrapper .features {
@@ -76,10 +112,43 @@
 }
 
 .wrapper .product-description {
-  background: #81d8d0;
+  background: #D6FFFF;
   color: #202020;
+}
+
+.wrapper .product-description .container-grid {
   display: -ms-grid;
   display: grid;
+      grid-template-areas: "item";
+}
+
+.wrapper .product-description .container-grid .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .product-description .container-grid .item .item-header {
+  width: 5em;
+  height: 5em;
+  margin: 0 auto;
+}
+
+.wrapper .product-description .container-grid .item .item-content {
+  padding: 0.5em;
+}
+
+.wrapper .product-description .container-grid .item .item-content h2 {
+  text-align: center;
+}
+
+.wrapper .product-description .container-grid .item .item-content p {
+  text-align: center;
+  padding: 0.5em;
 }
 
 .wrapper .product-description h1 {
@@ -148,40 +217,48 @@
   margin-left: unset;
 }
 
+.wrapper .product-section-title {
+  text-align: center;
+}
+
+.wrapper .product-section-title h2 {
+  color: black;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.wrapper .product-section-title p {
+  padding: 1em 1em 1.5em 1em;
+  color: black;
+  font-size: 0.8em;
+}
+
 @media screen and (min-width: 769px), print {
-  .wrapper section {
-    display: -ms-grid;
-    display: grid;
+  .container-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
   }
   .wrapper .hero {
-    height: 100vh;
     padding-top: 3em;
     padding-left: 11.5em;
-    grid-area: hero;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-grid-columns: 50% auto;
-        grid-template-columns: 50% auto;
-        grid-template-areas: "inner image-hero";
-  }
-  .wrapper .hero p {
-    width: 100%;
-  }
-  .wrapper .hero .inner {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: inner;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .wrapper .hero .inner h1 {
+    text-align: left;
     width: 90%;
   }
+  .wrapper .hero .inner p {
+    text-align: left;
+    width: 100%;
+  }
   .wrapper .hero .image-hero img {
-    width: 70%;
-    top: 0;
-    left: 0;
+    width: 50%;
   }
 }
 /*# sourceMappingURL=home.css.map */

@@ -7,11 +7,18 @@
 
 .wrapper
     section
-        padding: 2em
+        padding: 1em
 
         h1, h2, .read-btn
             text-transform: uppercase
+            font-weight: 300
             margin: 0
+
+        span
+            font-weight: 700
+
+        p
+            font-weight: 300
 
         h1
             font-size: 2rem
@@ -19,44 +26,64 @@
             width: 100%
 
             span
-                color: $primary-color
-                font-weight: bold
-
-        .read-btn
-            //float: right
-            display: inline-block
-            margin-top: 2em
-            margin-right: 3rem
-
-        .primary
-            padding: 1.5em 1.5em 1.5em 1.5em
-            border: 1px solid $primary-color
-
-            &:hover
-                background-color: $primary-color
-
-        .clipper
-            overflow: hidden
+                color: $span-hero-color
 
     .hero
-        padding-top: 10em
-        background-size: cover
-        background-image: url("http://shopscape.bold-themes.com/application/wp-content/uploads/sites/3/2016/04/hero_header.jpg")
+        background-image: url("../../assets/hero-background.png")
+        display: flex
+        align-items: center
+        position: relative
 
-        h1
-            color: $hero-text
-
-        p
+        .color-overlay
+            z-index: 1
+            background: $overly-color
+            position: absolute
             width: 100%
-            font-size: 1.5em
-            margin-bottom: 0
-            color: $hero-text
+            height: 100%
+            top: 0
+            bottom: 0
+            left: 0
 
         .image-hero
-            margin-top: 1em
+            z-index: 2
 
             img
                 width: 100%
+
+        .inner
+            z-index: 2
+            min-width: 60%
+            background-color: rgba(255, 255, 255, 0.85)
+
+            h1
+                color: $hero-text
+
+                span
+                    color: $span-hero-color
+                    font-weight: 700
+
+            p
+                font-size: 1.5em
+                font-weight: 400
+                margin-bottom: 0
+                color: $hero-text
+
+            .read-btn
+                display: inline-block
+                margin-top: 2em
+                margin-right: 3rem
+
+            .primary
+                padding: 1.5em 1.5em 1.5em 1.5em
+                border: 1px solid $primary-color
+                background-color: $hero-button-color
+                color: $hero-button-text
+                font-weight: 400
+                letter-spacing: 0.1em
+                font-size: 1.4rem
+
+                &:hover
+                    background-color: $hero-button-hover
 
     .features
         text-align: center
@@ -67,7 +94,29 @@
     .product-description
         background: $primary-color
         color: $product-text
-        display: grid
+
+        .container-grid
+            display: grid
+            grid-template-areas: "item"
+
+            .item
+                display: flex
+                flex-direction: column
+
+                .item-header
+                    width: 5em
+                    height: 5em
+                    margin: 0 auto
+
+                .item-content
+                    padding: 0.5em
+
+                    h2
+                        text-align: center
+
+                    p
+                        text-align: center
+                        padding: 0.5em
 
         h1
             text-align: center
@@ -113,32 +162,40 @@
             font-size: 75%
             margin-left: unset
 
-+tablet
-    .wrapper
-        section
-            display: grid
+    .product-section-title
+        text-align: center
 
+        h2
+            color: black
+            font-size: 2em
+            font-weight: 700
+            text-transform: none
+
+        p
+            padding: 1em 1em 1.5em 1em
+            color: black
+            font-size: 0.8em
+
++tablet
+    .container-grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr 1fr
+
+    .wrapper
         .hero
-            height: 100vh
             padding-top: 3em
             padding-left: 11.5em
-            grid-area: hero
-            grid-template-rows: auto
-            align-items: center
-            grid-template-columns: 50% auto
-            grid-template-areas: "inner image-hero"
-
-            p
-                width: 100%
+            flex-direction: row
 
             .inner
-                grid-area: inner
-
                 h1
+                    text-align: left
                     width: 90%
+
+                p
+                    text-align: left
+                    width: 100%
 
             .image-hero
                 img
-                    width: 70%
-                    top: 0
-                    left: 0
+                    width: 50%

@@ -22,46 +22,49 @@ class Header extends Component {
 
     return (
       <header>
-        <div className="container-70 centered">
-          <div className="header-inner header-container">
-            <div className="nav-toggle" onClick={this.handleClick}>
-              <a href="#" className="icon">
-                <i className="fa fa-lg fa-bars" />
-              </a>
-            </div>
-
-            <a href="#" className="logo">
-              <img src={logo} alt="Hayat logo" />
-            </a>
-            <nav className={menuActive}>
-              <div className="nav-wrapper">
-                <div className="nav-header" />
-                <div className="nav-toggle" onClick={this.handleClick}>
-                  <a href="#" className="icon">
-                    <i className="fa fa-lg fa-close" />
-                  </a>
-                </div>
-                <ul>
-                  <li>
-                    <a href="#">Serums</a>
-                  </li>
-                  <li>
-                    <a href="#">Best Sellers</a>
-                  </li>
-                  <li>
-                    <a href="#">FAQ</a>
-                  </li>
-                </ul>
+        <div className="header-container">
+          <div className="container-70 centered">
+            <div className="header-inner header-container">
+              <div className="nav-toggle" onClick={this.handleClick}>
+                <a href="#" className="icon">
+                  <i className="fa fa-lg fa-bars" />
+                </a>
               </div>
-            </nav>
-            <div className="cart">
-              <a href="#" className="cart icon">
-                <i className="fa fa-lg fa-shopping-cart" />
-                <span>2</span>
+
+              <a href="#" className="logo">
+                <img src={logo} alt="Hayat logo" />
               </a>
+              <nav className={menuActive}>
+                <div className="nav-wrapper">
+                  <div className="nav-header" />
+                  <div className="nav-toggle" onClick={this.handleClick}>
+                    <a href="#" className="icon">
+                      <i className="fa fa-lg fa-close" />
+                    </a>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">Serums</a>
+                    </li>
+                    <li>
+                      <a href="#">Best Sellers</a>
+                    </li>
+                    <li>
+                      <a href="#">FAQ</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div className="cart">
+                <a href="#" className="cart icon">
+                  <i className="fa fa-lg fa-shopping-cart" />
+                  <span>2</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
         <div id="banner" className="banner">
           <div className="container-70 centered">
             <p>
