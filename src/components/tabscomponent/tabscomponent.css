@@ -6,6 +6,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: #444;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .tabs .tab-list {
@@ -18,8 +21,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-bottom: 1px solid #ccc;
   padding-left: 0;
+  border-bottom: 1px solid #888;
 }
 
 .tabs .tab-list-item {
@@ -42,34 +45,22 @@
           align-items: center;
   font-size: 0.8em;
   text-align: center;
-  color: grey;
+  color: #231f20;
+  font-size: 12px;
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .tabs .tab-list-item:hover {
-  background-color: #FAF3F2;
-  border: solid #ccc;
-  border-width: 0px 0px 1px 0px;
-  margin-top: -1px;
   cursor: pointer;
 }
 
 .tabs .tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
-  margin-top: -1px;
-  color: black;
-}
-
-.tabs .tab-list-active:hover {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
+  font-weight: bold;
 }
 
 .tabs .tab-item-image {
-  width: 20px;
+  width: 30px;
   padding: 0.5rem;
 }
 
@@ -84,5 +75,14 @@
 
 .tabs .tab-content p {
   margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px), print {
+  .tabs .tab-item-image {
+    width: 40px;
+  }
+  .tabs .tab-list-item {
+    padding: 0.5rem 1.5rem;
+  }
 }
 /*# sourceMappingURL=tabscomponent.css.map */

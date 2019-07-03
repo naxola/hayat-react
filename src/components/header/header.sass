@@ -9,8 +9,6 @@ header
 
     .header-container
         background: $header-background
-
-    .header-container
         display: flex
         align-items: center
         padding: 0 0.8rem
@@ -20,20 +18,30 @@ header
             padding: 0
 
 
+        .nav-toggle
+            .icon
+                font-size: 1.6em
+
         .logo
             margin: 0 auto
             flex-basis: 10rem
-            padding: 0.25rem 0
+            padding: 0.5rem 0
 
             +tablet
                 margin: 0
 
         .cart
+            font-size: 1.3em
+
             a
                 span
                     padding-left: 0.5rem
 
-                +tablet
+            +tablet
+                font-size: 1em
+
+                a
+                    display: flex
                     border: 1px solid #4a4a4a
                     padding: 0.5rem 0.8rem 0.5rem 0.8rem
 
@@ -58,49 +66,50 @@ header
             font-weight: bold
             background: $header-menu
 
+            .nav-toggle
+                margin-bottom: 1em
+
             .nav-wrapper
-                padding: 1rem
+                padding: 1.6em
 
                 ul
                     display: flex
                     flex-direction: column
-                    padding-top: 1rem
                     height: 100%
+                    font-size: 1.7em
 
                     li
                         list-style: none
+                        padding: 0.8em 0
 
-                        a
-                            line-height: 2rem
-
-                            &:hover
-                                background: black
-
-            +tablet
-                width: inherit
+        +tablet
+            nav
+                display: flex
                 position: relative
                 left: 0
+                font-size: 1em
                 transition: none
                 background: inherit
                 height: auto
                 order: 0
-                padding: 0
-                margin: 0
 
                 .nav-wrapper
                     padding: 0
+                    margin: 0 auto
 
                     ul
-                        flex-direction: row !important
-                        padding: 0
+                        font-size: 1.2em
+                        flex-direction: row
 
                         li
+                            padding: 0
+
                             a
-                                line-height: 4.6875rem !important
                                 padding: 0 1rem
-                                color: white
+                                line-height: 3em
+                                color: $nav-text
                                 position: relative
-                                font-weight: lighter !important
+                                font-weight: 300
 
                                 &:hover
                                     background: black
@@ -127,8 +136,6 @@ header
         display: none
 
 
-.hidden
-
 .show
     left: 0
 
@@ -146,13 +153,18 @@ header
 
 .banner
     background-color: $banner-header
-    padding: 1rem
+    padding: 0.8rem
 
     p
-        font-size: 1rem
+        font-size: 1.6em
         color: $banner-text-color
         text-align: center
         letter-spacing: 0.113rem
 
         span
             font-weight: 700
+
+    +tablet
+        p
+            font-size: 1em
+            letter-spacing: 0.05em

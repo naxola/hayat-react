@@ -8,9 +8,6 @@ header {
 
 header .header-container {
   background: #202020;
-}
-
-header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,11 +26,15 @@ header .header-container {
   }
 }
 
+header .header-container .nav-toggle .icon {
+  font-size: 1.6em;
+}
+
 header .header-container .logo {
   margin: 0 auto;
   -ms-flex-preferred-size: 10rem;
       flex-basis: 10rem;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
 }
 
 @media screen and (min-width: 769px), print {
@@ -42,12 +43,22 @@ header .header-container .logo {
   }
 }
 
+header .header-container .cart {
+  font-size: 1.3em;
+}
+
 header .header-container .cart a span {
   padding-left: 0.5rem;
 }
 
 @media screen and (min-width: 769px), print {
+  header .header-container .cart {
+    font-size: 1em;
+  }
   header .header-container .cart a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     border: 1px solid #4a4a4a;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   }
@@ -78,8 +89,12 @@ header .header-container nav {
   background: rgba(0, 0, 0, 0.9);
 }
 
+header .header-container nav .nav-toggle {
+  margin-bottom: 1em;
+}
+
 header .header-container nav .nav-wrapper {
-  padding: 1rem;
+  padding: 1.6em;
 }
 
 header .header-container nav .nav-wrapper ul {
@@ -90,27 +105,23 @@ header .header-container nav .nav-wrapper ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 1rem;
   height: 100%;
+  font-size: 1.7em;
 }
 
 header .header-container nav .nav-wrapper ul li {
   list-style: none;
-}
-
-header .header-container nav .nav-wrapper ul li a {
-  line-height: 2rem;
-}
-
-header .header-container nav .nav-wrapper ul li a:hover {
-  background: black;
+  padding: 0.8em 0;
 }
 
 @media screen and (min-width: 769px), print {
   header .header-container nav {
-    width: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     left: 0;
+    font-size: 1em;
     -webkit-transition: none;
     transition: none;
     background: inherit;
@@ -118,25 +129,27 @@ header .header-container nav .nav-wrapper ul li a:hover {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
-    padding: 0;
-    margin: 0;
   }
   header .header-container nav .nav-wrapper {
     padding: 0;
+    margin: 0 auto;
   }
   header .header-container nav .nav-wrapper ul {
-    -webkit-box-orient: horizontal !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: row !important;
-            flex-direction: row !important;
+    font-size: 1.2em;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  header .header-container nav .nav-wrapper ul li {
     padding: 0;
   }
   header .header-container nav .nav-wrapper ul li a {
-    line-height: 4.6875rem !important;
     padding: 0 1rem;
+    line-height: 3em;
     color: white;
     position: relative;
-    font-weight: lighter !important;
+    font-weight: 300;
   }
   header .header-container nav .nav-wrapper ul li a:hover {
     background: black;
@@ -144,7 +157,7 @@ header .header-container nav .nav-wrapper ul li a:hover {
   header .header-container nav .nav-wrapper ul li a:before {
     content: "";
     display: block;
-    background: #D6FFFF;
+    background: #3EF1ED;
     width: 0%;
     height: 2px;
     position: absolute;
@@ -189,11 +202,11 @@ header .header-container nav .nav-wrapper ul li a:hover {
 
 .banner {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .banner p {
-  font-size: 1rem;
+  font-size: 1.6em;
   color: black;
   text-align: center;
   letter-spacing: 0.113rem;
@@ -201,5 +214,12 @@ header .header-container nav .nav-wrapper ul li a:hover {
 
 .banner p span {
   font-weight: 700;
+}
+
+@media screen and (min-width: 769px), print {
+  .banner p {
+    font-size: 1em;
+    letter-spacing: 0.05em;
+  }
 }
 /*# sourceMappingURL=header.css.map */

@@ -24,7 +24,7 @@ class Header extends Component {
       <header>
         <div className="header-container">
           <div className="container-70 centered">
-            <div className="header-inner header-container">
+            <div className="header-container">
               <div className="nav-toggle" onClick={this.handleClick}>
                 <a href="#" className="icon">
                   <i className="fa fa-lg fa-bars" />
@@ -36,18 +36,18 @@ class Header extends Component {
               </a>
               <nav className={menuActive}>
                 <div className="nav-wrapper">
-                  <div className="nav-header" />
                   <div className="nav-toggle" onClick={this.handleClick}>
                     <a href="#" className="icon">
                       <i className="fa fa-lg fa-close" />
                     </a>
                   </div>
+                  <div className="nav-header" />
                   <ul>
                     <li>
-                      <a href="#">Serums</a>
+                      <a href="./">Peptos</a>
                     </li>
                     <li>
-                      <a href="#">Best Sellers</a>
+                      <a href="#">About Us</a>
                     </li>
                     <li>
                       <a href="#">FAQ</a>
@@ -58,7 +58,7 @@ class Header extends Component {
               <div className="cart">
                 <a href="#" className="cart icon">
                   <i className="fa fa-lg fa-shopping-cart" />
-                  <span>2</span>
+                  <span>0</span>
                 </a>
               </div>
             </div>

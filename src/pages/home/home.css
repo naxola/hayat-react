@@ -31,8 +31,23 @@
   color: red;
 }
 
+.wrapper section img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .wrapper .hero {
   background-image: url("../../assets/hero-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,7 +59,7 @@
 
 .wrapper .hero .color-overlay {
   z-index: 1;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.75);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -54,21 +69,48 @@
 }
 
 .wrapper .hero .image-hero {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   z-index: 2;
+  display: block;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
 }
 
-.wrapper .hero .image-hero img {
-  width: 100%;
+.wrapper .hero .image-hero .img-container {
+  width: 50%;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 100px 0 auto;
+}
+
+.wrapper .hero .image-hero .img-container img.product-img {
+  position: relative;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
 .wrapper .hero .inner {
   z-index: 2;
-  min-width: 60%;
-  background-color: rgba(255, 255, 255, 0.85);
+  display: block;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 16px;
 }
 
 .wrapper .hero .inner h1 {
   color: black;
+  text-transform: none;
+  font-weight: bold;
+  margin: 0;
+  font-size: 3.2em;
+  padding: 0;
 }
 
 .wrapper .hero .inner h1 span {
@@ -76,11 +118,19 @@
   font-weight: 700;
 }
 
-.wrapper .hero .inner p {
-  font-size: 1.5em;
-  font-weight: 400;
-  margin-bottom: 0;
-  color: black;
+.wrapper .hero .inner h2 {
+  text-transform: lowercase;
+  font-weight: 300;
+  color: #666;
+  margin: 0;
+  font-size: 1.35em;
+}
+
+.wrapper .hero .inner .pay-widget {
+  min-width: 0;
+  width: 100%;
+  display: block;
+  padding: 1em;
 }
 
 .wrapper .hero .inner .read-btn {
@@ -91,8 +141,8 @@
 
 .wrapper .hero .inner .primary {
   padding: 1.5em 1.5em 1.5em 1.5em;
-  border: 1px solid #D6FFFF;
-  background-color: #D6FFFF;
+  border: 1px solid #3EF1ED;
+  background-color: #3EF1ED;
   color: grey;
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -112,8 +162,14 @@
 }
 
 .wrapper .product-description {
-  background: #D6FFFF;
+  background: #D7FFFE;
   color: #202020;
+}
+
+.wrapper .product-description h1 {
+  font-size: 2.1em;
+  font-weight: 400;
+  padding: 0 0.5em;
 }
 
 .wrapper .product-description .container-grid {
@@ -130,6 +186,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 1.5em;
 }
 
 .wrapper .product-description .container-grid .item .item-header {
@@ -139,16 +196,32 @@
 }
 
 .wrapper .product-description .container-grid .item .item-content {
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .wrapper .product-description .container-grid .item .item-content h2 {
   text-align: center;
+  font-size: 1.9em;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 769px), print {
+  .wrapper .product-description .container-grid .item .item-content h2 {
+    font-size: 1.6em;
+  }
 }
 
 .wrapper .product-description .container-grid .item .item-content p {
   text-align: center;
   padding: 0.5em;
+  font-size: 1.7em;
+  color: #888;
+}
+
+@media screen and (min-width: 769px), print {
+  .wrapper .product-description .container-grid .item .item-content p {
+    font-size: 1.2em;
+  }
 }
 
 .wrapper .product-description h1 {
@@ -163,6 +236,12 @@
   transition: -webkit-transform 0.3s !important;
   transition: transform 0.3s !important;
   transition: transform 0.3s, -webkit-transform 0.3s !important;
+}
+
+@media screen and (min-width: 769px), print {
+  .wrapper .purchase-overly--shown {
+    visibility: hidden !important;
+  }
 }
 
 .wrapper .purchase-overly {
@@ -202,12 +281,12 @@
   text-transform: uppercase;
   margin: 0.75em;
   width: calc(100% - 1.5em);
-  background: #74c344;
-  color: white;
+  background: #3ADCD8;
+  color: black;
   -webkit-transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
-  border: 0;
+  border: 0.5px solid #3ADCD8;
 }
 
 .wrapper .btn-buy span {
@@ -217,21 +296,33 @@
   margin-left: unset;
 }
 
-.wrapper .product-section-title {
+.prop-chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #eee;
+  padding: 0;
+  margin-bottom: 36px;
+}
+
+.prop-chart .prop {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+  margin: 8px 0;
   text-align: center;
 }
 
-.wrapper .product-section-title h2 {
-  color: black;
-  font-size: 2em;
-  font-weight: 700;
-  text-transform: none;
-}
-
-.wrapper .product-section-title p {
-  padding: 1em 1em 1.5em 1em;
-  color: black;
-  font-size: 0.8em;
+.prop-chart .prop h5 {
+  white-space: nowrap;
+  text-transform: lowercase;
+  margin: 0 0 8px 0;
 }
 
 @media screen and (min-width: 769px), print {
@@ -242,23 +333,32 @@
         grid-template-rows: 1fr 1fr;
   }
   .wrapper .hero {
-    padding-top: 3em;
-    padding-left: 11.5em;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    padding: 36px;
   }
-  .wrapper .hero .inner h1 {
+  .wrapper .hero .image-hero {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .wrapper .hero .inner {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
     text-align: left;
-    width: 90%;
+    background: none;
   }
-  .wrapper .hero .inner p {
-    text-align: left;
-    width: 100%;
+  .wrapper .hero .inner h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
   }
-  .wrapper .hero .image-hero img {
-    width: 50%;
+  .wrapper .hero .inner .pay-widget {
+    padding: 0;
+  }
+  .wrapper .hero .inner .btn-buy {
+    max-width: 250px;
+    margin-left: 0;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=home.css.map */

@@ -28,8 +28,19 @@
             span
                 color: $span-hero-color
 
+        img
+            display: block
+            width: 100%
+            max-width: 100%
+            height: auto
+
     .hero
         background-image: url("../../assets/hero-background.png")
+        background-size: cover
+        background-repeat: no-repeat
+        flex-flow: row wrap
+        padding: 0
+        width: 100%
         display: flex
         align-items: center
         position: relative
@@ -45,28 +56,54 @@
             left: 0
 
         .image-hero
+            order: 1
             z-index: 2
+            display: block
+            transition: all 0.7s ease
 
-            img
-                width: 100%
+            .img-container
+                width: 50%
+                padding: 0
+                max-width: 400px
+                margin: 0 100px 0 auto
+
+                img.product-img
+                    position: relative
+                    transform: rotate(15deg)
 
         .inner
             z-index: 2
-            min-width: 60%
-            background-color: rgba(255, 255, 255, 0.85)
+            display: block
+            order: 3
+            flex-basis: 100%
+            text-align: center
+            background-color: #f5f5f5
+            padding: 16px
 
             h1
                 color: $hero-text
+                text-transform: none
+                font-weight: bold
+                margin: 0
+                font-size: 3.2em
+                padding: 0
 
                 span
                     color: $span-hero-color
                     font-weight: 700
 
-            p
-                font-size: 1.5em
-                font-weight: 400
-                margin-bottom: 0
-                color: $hero-text
+            h2
+                text-transform: lowercase
+                font-weight: 300
+                color: #666
+                margin: 0
+                font-size: 1.35em
+
+            .pay-widget
+                min-width: 0
+                width: 100%
+                display: block
+                padding: 1em
 
             .read-btn
                 display: inline-block
@@ -92,8 +129,13 @@
             padding-bottom: 0.8em
 
     .product-description
-        background: $primary-color
+        background: #D7FFFE
         color: $product-text
+
+        h1
+            font-size: 2.1em
+            font-weight: 400
+            padding: 0 0.5em
 
         .container-grid
             display: grid
@@ -102,6 +144,7 @@
             .item
                 display: flex
                 flex-direction: column
+                padding: 1.5em
 
                 .item-header
                     width: 5em
@@ -109,14 +152,24 @@
                     margin: 0 auto
 
                 .item-content
-                    padding: 0.5em
+                    padding: 1em
 
                     h2
                         text-align: center
+                        font-size: 1.9em
+                        font-weight: 400
+
+                        +tablet
+                            font-size: 1.6em
 
                     p
                         text-align: center
                         padding: 0.5em
+                        font-size: 1.7em
+                        color: #888
+
+                        +tablet
+                            font-size: 1.2em
 
         h1
             text-align: center
@@ -125,6 +178,9 @@
         visibility: visible !important
         transform: translateY(0) !important
         transition: transform 0.3s !important
+
+        +tablet
+            visibility: hidden !important
 
     .purchase-overly
         will-change: transform
@@ -154,7 +210,7 @@
         color: $pay-button-text
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1)
         cursor: pointer
-        border: 0
+        border: 0.5px solid $pay-button-border
 
         span
             position: relative
@@ -162,19 +218,23 @@
             font-size: 75%
             margin-left: unset
 
-    .product-section-title
+.prop-chart
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-start
+    background-color: #eee
+    padding: 0
+    margin-bottom: 36px
+
+    .prop
+        flex-basis: 33%
+        margin: 8px 0
         text-align: center
 
-        h2
-            color: black
-            font-size: 2em
-            font-weight: 700
-            text-transform: none
-
-        p
-            padding: 1em 1em 1.5em 1em
-            color: black
-            font-size: 0.8em
+        h5
+            white-space: nowrap
+            text-transform: lowercase
+            margin: 0 0 8px 0
 
 +tablet
     .container-grid
@@ -183,19 +243,25 @@
 
     .wrapper
         .hero
-            padding-top: 3em
-            padding-left: 11.5em
-            flex-direction: row
-
-            .inner
-                h1
-                    text-align: left
-                    width: 90%
-
-                p
-                    text-align: left
-                    width: 100%
+            padding: 36px
 
             .image-hero
-                img
-                    width: 50%
+                flex: 1
+
+            .inner
+                flex: 1
+                padding: 0
+                text-align: left
+                background: none
+
+                h2
+                    font-size: 1.2em
+                    margin-top: 10px
+
+                .pay-widget
+                    padding: 0
+
+                .btn-buy
+                    max-width: 250px
+                    margin-left: 0
+                    margin-top: 20px
