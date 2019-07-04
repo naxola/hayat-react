@@ -1,0 +1,26 @@
+.nosotros {
+  padding: 1.6em;
+}
+
+.nosotros p {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  color: #888;
+  text-align: justify;
+  text-indent: 10px;
+}
+
+.nosotros p span {
+  text-align: right !important;
+}
+
+@media screen and (min-width: 769px), print {
+  .nosotros p {
+    font-size: 1em;
+  }
+}
+
+.nosotros h2 {
+  margin-bottom: 1em !important;
+}
+/*# sourceMappingURL=nosotros.css.map */

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../../assets/logo-hayat-white.png";
+import { Link } from "react-router-dom";
 
 import "./header.css";
 
@@ -36,21 +37,35 @@ class Header extends Component {
               </a>
               <nav className={menuActive}>
                 <div className="nav-wrapper">
-                  <div className="nav-toggle" onClick={this.handleClick}>
-                    <a href="#" className="icon">
+                  <div className="nav-toggle">
+                    <a href="#" className="icon" onClick={this.handleClick}>
                       <i className="fa fa-lg fa-close" />
                     </a>
                   </div>
                   <div className="nav-header" />
                   <ul>
                     <li>
-                      <a href="./">Peptos</a>
+                      <Link to="/" className="link" onClick={this.handleClick}>
+                        Peptos
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">About Us</a>
+                      <Link
+                        to="/pages/nosotros"
+                        className="link"
+                        onClick={this.handleClick}
+                      >
+                        Nosotros
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">FAQ</a>
+                      <Link
+                        to="/pages/faq"
+                        className="link"
+                        onClick={this.handleClick}
+                      >
+                        FAQ
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -65,13 +80,7 @@ class Header extends Component {
           </div>
         </div>
 
-        <div id="banner" className="banner">
-          <div className="container-70 centered">
-            <p>
-              <span>Envío gratis</span> a toda la península
-            </p>
-          </div>
-        </div>
+        
       </header>
     );
   }

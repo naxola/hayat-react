@@ -164,6 +164,7 @@
 .wrapper .product-description {
   background: #D7FFFE;
   color: #202020;
+  font-size: 16px;
 }
 
 .wrapper .product-description h1 {
@@ -186,7 +187,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1.5em;
 }
 
 .wrapper .product-description .container-grid .item .item-header {
@@ -202,7 +202,8 @@
 .wrapper .product-description .container-grid .item .item-content h2 {
   text-align: center;
   font-size: 1.9em;
-  font-weight: 400;
+  font-weight: 300;
+  margin-bottom: 0.5em;
 }
 
 @media screen and (min-width: 769px), print {
@@ -213,14 +214,13 @@
 
 .wrapper .product-description .container-grid .item .item-content p {
   text-align: center;
-  padding: 0.5em;
-  font-size: 1.7em;
+  font-size: 1em;
   color: #888;
 }
 
 @media screen and (min-width: 769px), print {
   .wrapper .product-description .container-grid .item .item-content p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
@@ -323,6 +323,39 @@
   white-space: nowrap;
   text-transform: lowercase;
   margin: 0 0 8px 0;
+}
+
+.banner {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.8rem;
+  z-index: 3;
+  top: 4.5em;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+@media screen and (min-width: 769px), print {
+  .banner {
+    top: 3.6em;
+  }
+}
+
+.banner p {
+  font-size: 1.6em;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.113rem;
+}
+
+.banner p span {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 769px), print {
+  .banner p {
+    font-size: 1em;
+    letter-spacing: 0.05em;
+  }
 }
 
 @media screen and (min-width: 769px), print {

@@ -77,6 +77,20 @@
   margin-bottom: 1em;
 }
 
+.tabs .tab-content p span {
+  font-weight: 400;
+}
+
+.tabs .tab-content ul {
+  list-style: none;
+}
+
+.tabs .tab-content ul li {
+  margin-left: 0.5em;
+  padding: 0.5em 0;
+  font-weight: 300;
+}
+
 @media screen and (min-width: 769px), print {
   .tabs .tab-item-image {
     width: 40px;

@@ -131,6 +131,7 @@
     .product-description
         background: #D7FFFE
         color: $product-text
+        font-size: 16px
 
         h1
             font-size: 2.1em
@@ -144,7 +145,6 @@
             .item
                 display: flex
                 flex-direction: column
-                padding: 1.5em
 
                 .item-header
                     width: 5em
@@ -157,19 +157,19 @@
                     h2
                         text-align: center
                         font-size: 1.9em
-                        font-weight: 400
+                        font-weight: 300
+                        margin-bottom: 0.5em
 
                         +tablet
                             font-size: 1.6em
 
                     p
                         text-align: center
-                        padding: 0.5em
-                        font-size: 1.7em
+                        font-size: 1em
                         color: #888
 
                         +tablet
-                            font-size: 1.2em
+                            font-size: 1em
 
         h1
             text-align: center
@@ -235,6 +235,31 @@
             white-space: nowrap
             text-transform: lowercase
             margin: 0 0 8px 0
+
+.banner
+    background-color: $banner-header
+    padding: 0.8rem
+    z-index: 3
+    top: 4.5em
+    position: sticky
+
+    +tablet
+        top: 3.6em
+
+
+    p
+        font-size: 1.6em
+        color: $banner-text-color
+        text-align: center
+        letter-spacing: 0.113rem
+
+        span
+            font-weight: 700
+
+    +tablet
+        p
+            font-size: 1em
+            letter-spacing: 0.05em
 
 +tablet
     .container-grid

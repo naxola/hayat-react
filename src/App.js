@@ -3,17 +3,22 @@ import "./App.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import HomePage from "./pages/home/home";
-import { BrowserRouter, Route } from "react-router-dom";
+import FAQPage from "./pages/FAQ/faq";
+import NosotrosPage from "./pages/nosotros/nosotros";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-const prueba = () => <div>ESto es una prueba</div>;
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
-        <Route path="/" component={HomePage} />
+        <Header />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/pages/nosotros" exact component={NosotrosPage} />
+          <Route path="/pages/faq" exact component={FAQPage} />
+        </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

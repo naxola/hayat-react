@@ -28,6 +28,14 @@ html a:visited {
   color: white;
 }
 
+html .section-container {
+  font-size: 16px;
+}
+
+html .section-container p {
+  color: #777777;
+}
+
 @media screen and (min-width: 769px), print {
   html .section-container {
     width: 70%;

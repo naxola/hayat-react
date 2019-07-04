@@ -55,7 +55,7 @@ class HomePage extends Component {
   render() {
     console.log(this.state);
     let overlyButton =
-      this.state.theposition < 0.25
+      this.state.theposition < 0.2
         ? "purchase-overly"
         : "purchase-overly purchase-overly--shown";
 
@@ -70,6 +70,13 @@ class HomePage extends Component {
           />
           <meta name="keywords" content="Hayat, serum, peptos, formulacion" />
         </Helmet>
+        <div id="banner" className="banner">
+          <div className="container-70 centered">
+            <p>
+              <span>Envío gratis</span> a toda la península
+            </p>
+          </div>
+        </div>
         <div className="wrapper">
           <section className="hero">
             <div className="image-hero">
@@ -121,28 +128,38 @@ class HomePage extends Component {
                   edad en un mismo producto por la combinación única de
                   principios activos de alta calidad.
                 </p>
+                <p>Estos principios son:</p>
+                <ul>
+                  <li>Elastina vegetal</li>
+                  <li>Ácido Hialurónico</li>
+                  <li>
+                    Fermento antipolución SynAke complejo peptídico (la proteína
+                    Waglerin-1 relaja las arrugas y líneas de expresión,
+                    imitando el conocido efecto Botox)
+                  </li>
+                  <li>
+                    SynColl complejo peptídico (Palmitoyl tripeptide-5) que
+                    estimula la formación natural de colágeno
+                  </li>
+                  <li>Argirelina complejo peptídico (hexapeptide)</li>
+                  <li>
+                    Zirhafirm (rico en phytoecdyesteroides, principalmente
+                    20-hydroxiecdysona)
+                  </li>
+                  <li>extracto de raíz de maral (rhaponticum carthamoides)</li>
+                  <li>Healerine</li>
+                  <li>fermentos PH4</li>
+                  <li>
+                    Una base nutritiva de vitaminas B3, B5, B6, liposimas A-C-E
+                    y células madre de naranja
+                  </li>
+                </ul>
                 <p>
-                  Estos principios son:
-                  <ul>
-                    <li>Elastina vegetal</li>
-                  </ul>
-                  Ácido Hialurónico Fermento antipolución SynAke complejo
-                  peptídico (la proteína Waglerin-1 relaja las arrugas y líneas
-                  de expresión, imitando el conocido efecto Botox), SynColl
-                  complejo peptídico (Palmitoyl tripeptide-5) que estimula la
-                  formación natural de colágeno, Argirelina complejo peptídico
-                  (hexapeptide), Zirhafirm (rico en phytoecdyesteroides,
-                  principalmente 20-hydroxiecdysona) extracto de raíz de maral
-                  (rhaponticum carthamoides) Healerine y fermentos PH4 Una base
-                  nutritiva de vitaminas B3, B5, B6, liposimas A-C-E y células
-                  madre de naranja.
-                </p>
-                <p>
-                  Nota: En nuestras formulaciones y desarrollos tratamos de
-                  minimizar el impacto residual en nuestro medio ambiente. Este
-                  producto se ha desarrollado teniendo en cuenta nuestras
-                  políticas de cuidado con la naturaleza, medio ambiente y
-                  animales.
+                  <span>Nota:</span> En nuestras formulaciones y desarrollos
+                  tratamos de minimizar el impacto residual en nuestro medio
+                  ambiente. Este producto se ha desarrollado teniendo en cuenta
+                  nuestras políticas de cuidado con la naturaleza, medio
+                  ambiente y animales.
                 </p>
               </div>
               <div label="Modo de uso" imgSource={Directions}>
@@ -269,7 +286,7 @@ class HomePage extends Component {
             </div>
           </section>
           <section className="features">
-            <div className="container">
+            <div className="section-container">
               <h1>Nuevo concepto de formulación cosmética</h1>
               <p>
                 Mezclar cada principio de la manera correcta, lo cambia todo. No

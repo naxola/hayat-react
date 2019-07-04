@@ -199,27 +199,4 @@ header .header-container nav .nav-wrapper ul li {
 .centered {
   margin: 0 auto;
 }
-
-.banner {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 0.8rem;
-}
-
-.banner p {
-  font-size: 1.6em;
-  color: black;
-  text-align: center;
-  letter-spacing: 0.113rem;
-}
-
-.banner p span {
-  font-weight: 700;
-}
-
-@media screen and (min-width: 769px), print {
-  .banner p {
-    font-size: 1em;
-    letter-spacing: 0.05em;
-  }
-}
 /*# sourceMappingURL=header.css.map */
