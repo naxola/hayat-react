@@ -3,24 +3,14 @@
 }
 
 .nosotros p {
-  font-size: 1.6em;
+  font-size: 1em;
   margin-bottom: 1em;
-  color: #888;
-  text-align: justify;
-  text-indent: 10px;
-}
-
-.nosotros p span {
-  text-align: right !important;
-}
-
-@media screen and (min-width: 769px), print {
-  .nosotros p {
-    font-size: 1em;
-  }
+  color: #777777;
+  text-indent: 20px;
 }
 
 .nosotros h2 {
+  font-size: 1.1em;
   margin-bottom: 1em !important;
 }
 /*# sourceMappingURL=nosotros.css.map */

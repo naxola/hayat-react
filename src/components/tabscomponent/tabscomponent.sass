@@ -5,7 +5,6 @@
     display: flex
     flex-direction: column
     color: #444
-    font-size: 16px
     font-weight: normal
 
     .tab-list
@@ -18,16 +17,15 @@
     .tab-list-item
         list-style: none
         margin-bottom: -1px
-        padding: 0.5rem
+        padding: 0.2rem
         text-transform: uppercase
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
-        font-size: 0.8em
         text-align: center
         color: #231f20
-        font-size: 12px
+        font-size: 0.8em
         font-weight: 400
         letter-spacing: 0.5px
 
@@ -46,21 +44,23 @@
         color: #777777
 
         h2
-            margin-bottom: 1em
+            margin: 0.5em 0
 
         p
-            margin-bottom: 1em
+            margin: 0.5em 0
 
             span
                 font-weight: 400
 
-        ul
-            list-style: none
+        ol
+            margin-left: 2em
 
             li
                 margin-left: 0.5em
-                padding: 0.5em 0
                 font-weight: 300
+
+                span
+                    font-weight: 400
 
 +tablet
     .tabs

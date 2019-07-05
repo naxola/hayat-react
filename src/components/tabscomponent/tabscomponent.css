@@ -7,7 +7,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   color: #444;
-  font-size: 16px;
   font-weight: normal;
 }
 
@@ -28,7 +27,7 @@
 .tabs .tab-list-item {
   list-style: none;
   margin-bottom: -1px;
-  padding: 0.5rem;
+  padding: 0.2rem;
   text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,10 +42,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 0.8em;
   text-align: center;
   color: #231f20;
-  font-size: 12px;
+  font-size: 0.8em;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
@@ -70,25 +68,28 @@
 }
 
 .tabs .tab-content h2 {
-  margin-bottom: 1em;
+  margin: 0.5em 0;
 }
 
 .tabs .tab-content p {
-  margin-bottom: 1em;
+  margin: 0.5em 0;
 }
 
 .tabs .tab-content p span {
   font-weight: 400;
 }
 
-.tabs .tab-content ul {
-  list-style: none;
+.tabs .tab-content ol {
+  margin-left: 2em;
 }
 
-.tabs .tab-content ul li {
+.tabs .tab-content ol li {
   margin-left: 0.5em;
-  padding: 0.5em 0;
   font-weight: 300;
+}
+
+.tabs .tab-content ol li span {
+  font-weight: 400;
 }
 
 @media screen and (min-width: 769px), print {

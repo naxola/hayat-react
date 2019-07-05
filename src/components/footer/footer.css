@@ -1,0 +1,45 @@
+footer .lower-footer {
+  padding: 8px 16px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.7em;
+  line-height: 1.4em;
+  color: #666;
+  border-top: 1px solid #666;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 769px), print {
+  footer .lower-footer {
+    text-align: left;
+  }
+}
+
+footer .lower-footer a, footer .lower-footer a:visited {
+  color: #666;
+  line-height: 1.4em;
+}
+
+footer .lower-footer .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 769px), print {
+  footer .lower-footer .line {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+footer .lower-footer .line a {
+  margin: 0.5em;
+}
+/*# sourceMappingURL=footer.css.map */

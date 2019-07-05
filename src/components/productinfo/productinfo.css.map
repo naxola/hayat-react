@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,WAAW,CAAC;EACR,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,QAAQ;EACnB,eAAe,EAAE,UAAU;EAC3B,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,CAAC;EACV,aAAa,EAAE,IAAI;CAUa;;AAhBpC,AAQI,WARO,CAQP,KAAK,CAAC;EACF,UAAU,EAAE,GAAG;EACf,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,MAAM;CAKQ;;AAhBlC,AAaQ,WAbG,CAQP,KAAK,CAKD,EAAE,CAAC;EACC,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,SAAS;EACzB,MAAM,EAAE,SAAS;CAAG",
+    "sources": [
+        "productinfo.sass",
+        "../../mq.sass",
+        "../../colors.sass"
+    ],
+    "names": [],
+    "file": "productinfo.css"
+}

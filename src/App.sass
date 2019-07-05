@@ -11,12 +11,16 @@
     box-sizing: border-box
 
 html
+    height: 100%
+
+html, body
     font-family: "Roboto"
-    font-size: 10px
+    font-size: 16px
 
-    +tablet
-        font-size: 15px
-
+body
+    min-height: 100%
+    display: grid
+    grid-template-rows: 1fr auto
 
     a
         text-decoration: none
@@ -26,13 +30,51 @@ html
         &:visited
             color: white
 
-    .section-container
-        font-size: 16px
+    p
+        color: $p-text-color
+        font-weight: 300
 
-        p
-            color: $p-text-color
+    .container-50
+        margin: 0 auto
+        width: 100%
 
-    +tablet
-        .section-container
+        +tablet
+            width: 50%
+
+    .container
+        width: 100%
+        margin: 0 auto
+
+    .container-70
+        width: 100%
+
+        +tablet
             width: 70%
-            margin: 0 auto
+
+.wrapper
+    width: 100%
+
+    section
+        h1, h2, .read-btn
+            text-transform: uppercase
+            font-weight: 300
+            margin: 0
+
+        span
+            font-weight: 700
+
+        h1
+            font-size: 2rem
+
+            span
+                color: $span-hero-color
+
+        img
+            display: block
+            width: 100%
+            max-width: 100%
+            height: auto
+
+.footer
+    grid-row-start: 2
+    grid-row-end: 3

@@ -31,10 +31,10 @@ class Header extends Component {
                   <i className="fa fa-lg fa-bars" />
                 </a>
               </div>
-
-              <a href="#" className="logo">
+              <Link to="/" className="logo">
                 <img src={logo} alt="Hayat logo" />
-              </a>
+              </Link>
+
               <nav className={menuActive}>
                 <div className="nav-wrapper">
                   <div className="nav-toggle">
@@ -71,16 +71,14 @@ class Header extends Component {
                 </div>
               </nav>
               <div className="cart">
-                <a href="#" className="cart icon">
+                <Link to="/cart" className="link" onClick={this.handleClick}>
                   <i className="fa fa-lg fa-shopping-cart" />
                   <span>0</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-
-        
       </header>
     );
   }

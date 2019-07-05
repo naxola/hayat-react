@@ -1,292 +1,63 @@
 @import ../../mq.sass
 @import ../../colors.sass
 
-.container
-    width: 100%
-    margin: 0 auto
+.read-btn
+    display: inline-block
+    margin-top: 2em
+    margin-right: 3rem
 
-.wrapper
-    section
-        padding: 1em
+.primary
+    padding: 1.5em 1.5em 1.5em 1.5em
+    border: 1px solid $primary-color
+    background-color: $hero-button-color
+    color: $hero-button-text
+    font-weight: 400
+    letter-spacing: 0.1em
+    font-size: 1.4rem
 
-        h1, h2, .read-btn
-            text-transform: uppercase
-            font-weight: 300
-            margin: 0
+    &:hover
+        background-color: $hero-button-hover
 
-        span
-            font-weight: 700
+.purchase-overly--shown
+    visibility: visible !important
+    transform: translateY(0) !important
+    transition: transform 0.3s !important
 
-        p
-            font-weight: 300
+    +tablet
+        visibility: hidden !important
 
-        h1
-            font-size: 2rem
-            padding: 0.5em 0
-            width: 100%
+.purchase-overly
+    will-change: transform
+    left: 0
+    right: 0
+    bottom: 0
+    position: fixed
+    background: #fff
+    z-index: 1000
+    box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.3)
+    transform: translateY(100%)
+    transition: transform 0.3s, visibility 0s 0.3s
+    visibility: hidden
 
-            span
-                color: $span-hero-color
-
-        img
-            display: block
-            width: 100%
-            max-width: 100%
-            height: auto
-
-    .hero
-        background-image: url("../../assets/hero-background.png")
-        background-size: cover
-        background-repeat: no-repeat
-        flex-flow: row wrap
-        padding: 0
-        width: 100%
-        display: flex
-        align-items: center
-        position: relative
-
-        .color-overlay
-            z-index: 1
-            background: $overly-color
-            position: absolute
-            width: 100%
-            height: 100%
-            top: 0
-            bottom: 0
-            left: 0
-
-        .image-hero
-            order: 1
-            z-index: 2
-            display: block
-            transition: all 0.7s ease
-
-            .img-container
-                width: 50%
-                padding: 0
-                max-width: 400px
-                margin: 0 100px 0 auto
-
-                img.product-img
-                    position: relative
-                    transform: rotate(15deg)
-
-        .inner
-            z-index: 2
-            display: block
-            order: 3
-            flex-basis: 100%
-            text-align: center
-            background-color: #f5f5f5
-            padding: 16px
-
-            h1
-                color: $hero-text
-                text-transform: none
-                font-weight: bold
-                margin: 0
-                font-size: 3.2em
-                padding: 0
-
-                span
-                    color: $span-hero-color
-                    font-weight: 700
-
-            h2
-                text-transform: lowercase
-                font-weight: 300
-                color: #666
-                margin: 0
-                font-size: 1.35em
-
-            .pay-widget
-                min-width: 0
-                width: 100%
-                display: block
-                padding: 1em
-
-            .read-btn
-                display: inline-block
-                margin-top: 2em
-                margin-right: 3rem
-
-            .primary
-                padding: 1.5em 1.5em 1.5em 1.5em
-                border: 1px solid $primary-color
-                background-color: $hero-button-color
-                color: $hero-button-text
-                font-weight: 400
-                letter-spacing: 0.1em
-                font-size: 1.4rem
-
-                &:hover
-                    background-color: $hero-button-hover
-
-    .features
-        text-align: center
-
-        h1
-            padding-bottom: 0.8em
-
-    .product-description
-        background: #D7FFFE
-        color: $product-text
-        font-size: 16px
-
-        h1
-            font-size: 2.1em
-            font-weight: 400
-            padding: 0 0.5em
-
-        .container-grid
-            display: grid
-            grid-template-areas: "item"
-
-            .item
-                display: flex
-                flex-direction: column
-
-                .item-header
-                    width: 5em
-                    height: 5em
-                    margin: 0 auto
-
-                .item-content
-                    padding: 1em
-
-                    h2
-                        text-align: center
-                        font-size: 1.9em
-                        font-weight: 300
-                        margin-bottom: 0.5em
-
-                        +tablet
-                            font-size: 1.6em
-
-                    p
-                        text-align: center
-                        font-size: 1em
-                        color: #888
-
-                        +tablet
-                            font-size: 1em
-
-        h1
-            text-align: center
-
-    .purchase-overly--shown
-        visibility: visible !important
-        transform: translateY(0) !important
-        transition: transform 0.3s !important
-
-        +tablet
-            visibility: hidden !important
-
-    .purchase-overly
-        will-change: transform
-        left: 0
-        right: 0
-        bottom: 0
-        position: fixed
-        background: #fff
-        z-index: 1000
-        box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.3)
-        transform: translateY(100%)
-        transition: transform 0.3s, visibility 0s 0.3s
-        visibility: hidden
-
-    .btn-buy
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-wrap: wrap
-        line-height: 1.167em
-        letter-spacing: 0.113rem
-        padding: 1rem 1.25rem 0.9375rem
-        text-transform: uppercase
-        margin: 0.75em
-        width: calc(100% - 1.5em)
-        background: $pay-button
-        color: $pay-button-text
-        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1)
-        cursor: pointer
-        border: 0.5px solid $pay-button-border
-
-        span
-            position: relative
-            top: -0.3em
-            font-size: 75%
-            margin-left: unset
-
-.prop-chart
+.btn-buy
     display: flex
-    flex-flow: row wrap
-    justify-content: flex-start
-    background-color: #eee
-    padding: 0
-    margin-bottom: 36px
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    line-height: 1.167em
+    letter-spacing: 0.113rem
+    padding: 1rem 1.25rem 0.9375rem
+    text-transform: uppercase
+    margin: 0.75em
+    width: calc(100% - 1.5em)
+    background: $pay-button
+    color: $pay-button-text
+    transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1)
+    cursor: pointer
+    border: 0.5px solid $pay-button-border
 
-    .prop
-        flex-basis: 33%
-        margin: 8px 0
-        text-align: center
-
-        h5
-            white-space: nowrap
-            text-transform: lowercase
-            margin: 0 0 8px 0
-
-.banner
-    background-color: $banner-header
-    padding: 0.8rem
-    z-index: 3
-    top: 4.5em
-    position: sticky
-
-    +tablet
-        top: 3.6em
-
-
-    p
-        font-size: 1.6em
-        color: $banner-text-color
-        text-align: center
-        letter-spacing: 0.113rem
-
-        span
-            font-weight: 700
-
-    +tablet
-        p
-            font-size: 1em
-            letter-spacing: 0.05em
-
-+tablet
-    .container-grid
-        grid-template-columns: 1fr 1fr 1fr
-        grid-template-rows: 1fr 1fr
-
-    .wrapper
-        .hero
-            padding: 36px
-
-            .image-hero
-                flex: 1
-
-            .inner
-                flex: 1
-                padding: 0
-                text-align: left
-                background: none
-
-                h2
-                    font-size: 1.2em
-                    margin-top: 10px
-
-                .pay-widget
-                    padding: 0
-
-                .btn-buy
-                    max-width: 250px
-                    margin-left: 0
-                    margin-top: 20px
+    span
+        position: relative
+        top: -0.3em
+        font-size: 75%
+        margin-left: unset

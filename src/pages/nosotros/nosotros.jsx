@@ -13,7 +13,7 @@ function NosotrosPage() {
       </Helmet>
       <div className="wrapper">
         <section>
-          <div className="section-container">
+          <div className="container-50">
             <div className="nosotros">
               <h1>Nuestra historia</h1>
 

@@ -1,0 +1,56 @@
+.pannel-grid {
+  background: #D7FFFE;
+  color: #202020;
+}
+
+.pannel-grid h1 {
+  padding: 0.5em 0.5em;
+  text-align: center;
+}
+
+.pannel-grid .container-grid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "item";
+}
+
+@media screen and (min-width: 769px), print {
+  .pannel-grid .container-grid {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+}
+
+.pannel-grid .container-grid .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pannel-grid .container-grid .item .item-header {
+  width: 5em;
+  height: 5em;
+  margin: 0 auto;
+}
+
+.pannel-grid .container-grid .item .item-content {
+  padding: 1em;
+}
+
+.pannel-grid .container-grid .item .item-content h2 {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 300;
+  padding: 0.5em 0;
+}
+
+.pannel-grid .container-grid .item .item-content p {
+  text-align: center;
+}
+/*# sourceMappingURL=pannelgrid.css.map */

@@ -1,0 +1,40 @@
+@import ../../mq.sass
+@import ../../colors.sass
+
+.pannel-grid
+    background: #D7FFFE
+    color: $product-text
+
+    h1
+        padding: 0.5em 0.5em
+        text-align: center
+
+    .container-grid
+        display: grid
+        grid-template-areas: "item"
+
+        +tablet
+            grid-template-columns: 1fr 1fr 1fr
+            grid-template-rows: 1fr 1fr
+
+
+        .item
+            display: flex
+            flex-direction: column
+
+            .item-header
+                width: 5em
+                height: 5em
+                margin: 0 auto
+
+            .item-content
+                padding: 1em
+
+                h2
+                    text-align: center
+                    font-size: 1.5em
+                    font-weight: 300
+                    padding: 0.5em 0
+
+                p
+                    text-align: center

@@ -4,6 +4,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  font-size: 1em;
 }
 
 header .header-container {
@@ -26,14 +27,10 @@ header .header-container {
   }
 }
 
-header .header-container .nav-toggle .icon {
-  font-size: 1.6em;
-}
-
 header .header-container .logo {
   margin: 0 auto;
-  -ms-flex-preferred-size: 10rem;
-      flex-basis: 10rem;
+  -ms-flex-preferred-size: 6rem;
+      flex-basis: 6rem;
   padding: 0.5rem 0;
 }
 
@@ -43,18 +40,11 @@ header .header-container .logo {
   }
 }
 
-header .header-container .cart {
-  font-size: 1.3em;
-}
-
 header .header-container .cart a span {
   padding-left: 0.5rem;
 }
 
 @media screen and (min-width: 769px), print {
-  header .header-container .cart {
-    font-size: 1em;
-  }
   header .header-container .cart a {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -106,7 +96,7 @@ header .header-container nav .nav-wrapper ul {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  font-size: 1.7em;
+  margin-top: 2em;
 }
 
 header .header-container nav .nav-wrapper ul li {
@@ -140,6 +130,7 @@ header .header-container nav .nav-wrapper ul li {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin: 0;
   }
   header .header-container nav .nav-wrapper ul li {
     padding: 0;
@@ -184,16 +175,6 @@ header .header-container nav .nav-wrapper ul li {
 
 .hidden {
   left: -100%;
-}
-
-.container-70 {
-  width: 95%;
-}
-
-@media screen and (min-width: 769px), print {
-  .container-70 {
-    width: 70%;
-  }
 }
 
 .centered {

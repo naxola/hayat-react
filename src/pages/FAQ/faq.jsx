@@ -12,7 +12,7 @@ export default class FAQPage extends Component {
         </Helmet>
         <div className="wrapper">
           <section>
-            <div className="section-container">
+            <div className="container-50">
               <h1>Preguntas frecuentes</h1>
               <div className="question">
                 <h3>Do you offer a refund policy? </h3>

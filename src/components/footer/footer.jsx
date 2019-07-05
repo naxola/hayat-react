@@ -1,20 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./footer.css";
 
 //Se hace así porque es un stateless component
-const Footer = () => {
-  return (
-    <footer>
-      <div className="brand-trademark">
-        <span>© Hayat Iberia S.L. 2019. All rights reserved</span>
-      </div>
-      <div className="line">
-        <a href="/legal">Legal</a>
-        <a href="/terminos">Terminos</a>
-        <a href="/politica">Politica</a>
-        <a href="/conctacto">Contacto</a>
-      </div>
-    </footer>
-  );
-};
+class Footer extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const preload = {
+      data: [
+        {
+          name: "Legal",
+          url: "/legal"
+        },
+        {
+          name: "Términos",
+          url: "/terms"
+        },
+        {
+          name: "Política de privacidad",
+          url: "/privacy"
+        },
+        {
+          name: "Contacto",
+          url: "/contact"
+        },
+        {
+          name: "Cookies",
+          url: "/cookies"
+        }
+      ]
+    };
+    return (
+      <footer className="footer">
+        <div className="lower-footer">
+          <div className="brand-trademark">
+            <span>© Hayat Iberia S.L. 2019. All rights reserved</span>
+          </div>
+          <div className="line">
+            {preload.data.map(item => (
+              <Link to={item.url} className="link">
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </footer>
+    );
+  }
+}
 
 export default Footer;
