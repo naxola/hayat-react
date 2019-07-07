@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,SAAS,CAAC;EACN,UAAU,EAAE,GAAG;CAQc;;AATjC,AAGI,SAHK,CAGL,EAAE,CAAC;EACC,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,GAAG;CAAG;;AAL3B,AAOI,SAPK,CAOL,CAAC,CAAC;EACE,aAAa,EAAE,GAAG;EAClB,KAAK,EEXE,OAAO;CFWS",
+    "sources": [
+        "faq.sass",
+        "../../mq.sass",
+        "../../colors.sass"
+    ],
+    "names": [],
+    "file": "faq.css"
+}

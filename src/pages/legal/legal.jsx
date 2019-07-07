@@ -10,8 +10,10 @@ class Legal extends Component {
           <title>Legal</title>
         </Helmet>
         <div className="wrapper">
-          <h1>Legal</h1>
-          <p>Página de legal</p>
+          <div className="page">
+            <h1>Legal</h1>
+            <p>Página de legal</p>
+          </div>
         </div>
       </React.Fragment>
     );

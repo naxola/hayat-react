@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import HomePage from "./pages/home/home";
-import FAQPage from "./pages/FAQ/faq";
+import FAQPage from "./pages/faq/faq";
 import NosotrosPage from "./pages/nosotros/nosotros";
 import Cookies from "./pages/legal/cookies";
 import Privacy from "./pages/legal/privacy";

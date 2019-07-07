@@ -10,8 +10,10 @@ class Terms extends Component {
           <title>Terminos y condiciones</title>
         </Helmet>
         <div className="wrapper">
-          <h1>Terminos y condiciones</h1>
-          <p>Página de terminos</p>
+          <div className="page">
+            <h1>Terminos y condiciones</h1>
+            <p>Página de terminos</p>
+          </div>
         </div>
       </React.Fragment>
     );

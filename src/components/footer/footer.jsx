@@ -32,6 +32,7 @@ class Footer extends Component {
         }
       ]
     };
+
     return (
       <footer className="footer">
         <div className="lower-footer">
@@ -39,8 +40,8 @@ class Footer extends Component {
             <span>© Hayat Iberia S.L. 2019. All rights reserved</span>
           </div>
           <div className="line">
-            {preload.data.map(item => (
-              <Link to={item.url} className="link">
+            {preload.data.map((item, i) => (
+              <Link to={item.url} className="link" key={i}>
                 {item.name}
               </Link>
             ))}
