@@ -46,9 +46,24 @@ body
 
 .container-70
     width: 100%
+    margin: 0 auto
 
     +tablet
         width: 70%
+
+.container-80
+    width: 100%
+    margin: 0 auto
+
+    +tablet
+        width: 80%
+
+.container-90
+    width: 100%
+    margin: 0 auto
+
+    +tablet
+        width: 90%
 
 .page
     padding: 1.6em
@@ -57,9 +72,12 @@ body
         text-align: center
 
 .wrapper
-    min-height: calc(100vh - 7.6em)
+    min-height: calc(100vh - 8em)
+
     +tablet
         min-height: calc(100vh - 7.2em)
+
+
     section
         h1, h2, .read-btn
             text-transform: uppercase
@@ -80,4 +98,3 @@ body
             width: 100%
             max-width: 100%
             height: auto
-

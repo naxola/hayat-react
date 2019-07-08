@@ -10,10 +10,12 @@ class Cookies extends Component {
           <title>Cookies</title>
         </Helmet>
         <div className="wrapper">
-          <div className="page">
-            <h1>Cookies</h1>
-            <p>Página de cookies</p>
-          </div>
+          <section>
+            <div className="page">
+              <h1>Cookies</h1>
+              <p>Página de cookies</p>
+            </div>
+          </section>
         </div>
       </React.Fragment>
     );

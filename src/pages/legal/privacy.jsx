@@ -10,10 +10,12 @@ class Privacy extends Component {
           <title>Privacy</title>
         </Helmet>
         <div className="wrapper">
-          <div className="page">
-            <h1>Privacidad</h1>
-            <p>Página de privacidad</p>
-          </div>
+          <section>
+            <div className="page">
+              <h1>Privacidad</h1>
+              <p>Página de privacidad</p>
+            </div>
+          </section>
         </div>
       </React.Fragment>
     );

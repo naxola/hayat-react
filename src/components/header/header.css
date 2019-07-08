@@ -5,17 +5,18 @@ header {
   position: sticky;
   top: 0;
   font-size: 1em;
+  background: #202020;
 }
 
 header .header-container {
-  background: #202020;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 0.8rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 769px), print {
@@ -23,7 +24,7 @@ header .header-container {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0;
+    width: 70%;
   }
 }
 
@@ -175,9 +176,5 @@ header .header-container nav .nav-wrapper ul li {
 
 .hidden {
   left: -100%;
-}
-
-.centered {
-  margin: 0 auto;
 }
 /*# sourceMappingURL=header.css.map */

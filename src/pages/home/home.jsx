@@ -5,6 +5,7 @@ import Hero from "../../components/hero/hero";
 import ProductInfo from "../../components/productinfo/productinfo";
 import PanelGrid from "../../components/pannelgrid/pannelgrid";
 import Features from "../../components/features/features";
+import PaymentButton from "../../components/payment-button/payment.button";
 
 import "./home.css";
 import { Helmet } from "react-helmet";
@@ -12,7 +13,7 @@ import { Helmet } from "react-helmet";
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = { theposition: "", isVisible: false };
+    this.state = { theposition: "", isVisible: false, productId: 1 };
   }
   componentWillMount() {}
   componentDidMount() {
@@ -52,7 +53,6 @@ class HomePage extends Component {
     );
   };
   render() {
-    console.log(this.state);
     let overlyButton =
       this.state.theposition < 0.2
         ? "purchase-overly"
@@ -72,7 +72,7 @@ class HomePage extends Component {
         <Banner />
         <div className="wrapper">
           <section>
-            <Hero />
+            <Hero productId={this.state.productId} />
           </section>
           <section>
             <ProductInfo />
@@ -84,12 +84,7 @@ class HomePage extends Component {
             <Features />
           </section>
           <div className={overlyButton}>
-            <form action="#" method="post">
-              <input type="hidden" name="id[]" value="" />
-              <button type="submit" className="btn-buy">
-                compra ahora . 49<span>.99€</span>
-              </button>
-            </form>
+            <PaymentButton productID={this.state.productId} />
           </div>
         </div>
       </React.Fragment>

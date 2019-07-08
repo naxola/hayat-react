@@ -10,8 +10,12 @@ class Contact extends Component {
           <title>Contacto</title>
         </Helmet>
         <div className="wrapper">
-          <h1>Contacto</h1>
-          <p>Página de contacto</p>
+          <div className="page">
+            <section>
+              <h1>Contacto</h1>
+              <p>Página de contacto</p>
+            </section>
+          </div>
         </div>
       </React.Fragment>
     );

@@ -2,11 +2,15 @@ import React, { Component } from "react";
 
 import HeroImg from "../../assets/peptos-hero.png";
 import Shadow from "../../assets/shadow.png";
+import PaymentButton from "../payment-button/payment.button";
 
 import "./hero.css";
 
 class Hero extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <React.Fragment>
@@ -24,12 +28,7 @@ class Hero extends Component {
               Con péptidos, ácido hialurónico, fermentos detox y vitaminas
             </h2>
             <div className="pay-widget">
-              <form id="form-prod" action="#" method="post">
-                <input type="hidden" name="id[]" value="" />
-                <button type="submit" className="btn-buy">
-                  compra ahora . 49<span>.99€</span>
-                </button>
-              </form>
+              <PaymentButton productID={this.props.productId} />
             </div>
           </div>
         </div>

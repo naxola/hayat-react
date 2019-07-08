@@ -1,2 +1,3 @@
 //Para evitar problemas tipográficos, creamos esto.
-export * from "./product.constants";
+export * from "./catalog.constants";
+export * from "./cart.constants";

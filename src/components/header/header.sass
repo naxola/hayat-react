@@ -7,16 +7,17 @@ header
     position: sticky
     top: 0
     font-size: 1em
+    background: $header-background
 
     .header-container
-        background: $header-background
         display: flex
         align-items: center
-        padding: 0 0.8rem
+        padding: 0 1rem
+        margin: 0 auto
 
         +tablet
             justify-content: space-between
-            padding: 0
+            width: 70%
 
 
         .logo
@@ -135,8 +136,3 @@ header
 
 .hidden
     left: -100%
-
-
-
-.centered
-    margin: 0 auto

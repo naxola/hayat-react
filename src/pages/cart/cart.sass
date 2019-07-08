@@ -1,2 +1,147 @@
 @import ../../mq.sass
 @import ../../colors.sass
+
+.cart-list-items
+    .cart-list-header
+        display: none
+
+        +tablet
+            display: block
+
+            ul
+                display: flex
+                justify-content: space-between
+                list-style: none
+                font-weight: 400
+                color: $cart-color-header
+                border-bottom: solid 1px $cart-color-header-border
+
+                li
+                    padding: 0.5em
+
+    .cart-list-content
+        padding: 1em
+        flex-wrap: nowrap
+        position: relative
+        padding: 0.9375rem 0
+        border-bottom: 0.0625rem solid #e5e5e511
+
+        .cart-item
+            display: flex
+            align-items: center
+
+            .product-img
+                flex-shrink: 0
+                flex-basis: 5.5rem
+
+            .item-data
+                flex-grow: 2
+                display: flex
+                margin-left: 0.5em
+                flex-direction: column
+
+                +tablet
+                    flex-direction: row
+
+
+                .cart-item-content
+                    min-height: 2.8125rem
+                    font-size: 0.6875rem
+                    line-height: 1.182em
+                    letter-spacing: 0.066rem
+                    color: #969696
+
+                    .item-title
+                        font-size: 1.2em
+
+                    .item-description
+                        font-size: 0.8em
+                        font-weight: 300
+
+                .cart-item-numbers
+                    display: flex
+                    align-items: center
+                    flex-direction: row
+
+                    +tablet
+                        order: 2
+                        justify-content: space-between
+                        flex-shrink: 1
+                        max-width: calc(50% + 5.75rem)
+                        margin-left: auto
+                        flex-basis: 40rem
+
+
+                    .cart-quantity
+                        display: inline-block
+                        flex-shrink: 0
+                        flex-basis: 6.375rem
+
+                        span
+                            display: inline-block
+                            text-align: center
+                            width: 2.125rem
+                            height: 2.125rem
+                            font-weight: 600
+                            font-size: 0.8125rem
+                            line-height: 2rem
+                            text-decoration: none
+                            vertical-align: middle
+                            color: #4a4a4a
+                            border: 0.0625rem solid #e5e5e5
+                            transition: border-color 0.3s
+                            cursor: pointer
+                            color: #4a4a4a
+                            background: #f5f5f5
+
+                        input
+                            display: inline-block
+                            text-align: center
+                            width: 2.125rem
+                            height: 2.125rem
+                            font-weight: 600
+                            font-size: 0.8125rem
+                            line-height: 2rem
+                            text-decoration: none
+                            vertical-align: middle
+                            color: #4a4a4a
+                            border: 0.0625rem solid #e5e5e5
+                            transition: border-color 0.3s
+
+                    .item-description-line
+                        display: none
+
+                        +tablet
+                            font-size: 0.875rem
+                            font-weight: 400
+                            line-height: 1.143em
+                            display: inline-block
+                            color: #969696
+                            letter-spacing: 0.024rem
+                            text-align: right
+
+                    .item-subtotal
+                        display: flex
+                        margin-left: auto
+                        align-items: flex-end
+                        vertical-align: text-top
+
+                        span
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            flex-wrap: wrap
+                            font-size: 0.9375rem
+                            line-height: 1.2rem
+                            text-align: right
+                            font-weight: 600
+                            letter-spacing: 0.056rem
+                            text-rendering: optimizeLegibility
+                            color: #4a4a4a
+
+                            .decimal
+                                position: relative
+                                top: -0.3em
+                                left: -0.3em
+                                font-size: 75%
+                                margin-left: unset
