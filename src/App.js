@@ -12,12 +12,13 @@ import Legal from "./pages/legal/legal";
 import Contact from "./pages/contact/contact";
 import Cart from "./pages/cart/cart";
 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
+import history from "./core/helpers/history";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router history={history}>
         <Header />
         <Switch>
           <Route path="/" exact component={HomePage} />
@@ -31,7 +32,7 @@ function App() {
           <Route path="/cart" exact component={Cart} />
         </Switch>
         <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

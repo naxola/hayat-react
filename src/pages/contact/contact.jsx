@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
+import "./contact.css";
 
 class Contact extends Component {
   state = {};
@@ -10,12 +11,26 @@ class Contact extends Component {
           <title>Contacto</title>
         </Helmet>
         <div className="wrapper">
-          <div className="page">
-            <section>
-              <h1>Contacto</h1>
-              <p>Página de contacto</p>
-            </section>
-          </div>
+          <section>
+            <div className="container-70">
+              <div className="page">
+                <h1>Contacto</h1>
+                <div className="contacto">
+                  <h3>Atención a cliente en España</h3>
+                  <p>
+                    <a href="mailto:info@hayat-co.com">info@hayat-co.com</a>
+                  </p>
+                  <br />
+                  <h3>¿Quieres ser distribuidor?</h3>
+                  <p>
+                    <a href="mailto:distributor@hayat-co.com">
+                      distributor@hayat-co.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </React.Fragment>
     );

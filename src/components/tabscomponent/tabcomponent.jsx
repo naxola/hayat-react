@@ -5,12 +5,11 @@ export default class TabComponent extends Component {
   static propTypes = {
     activeTab: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-    imgSource: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired
   };
 
   onClick = () => {
-    const { label, imgSource, onClick } = this.props;
+    const { label, onClick } = this.props;
     onClick(label);
   };
 
@@ -28,7 +27,7 @@ export default class TabComponent extends Component {
 
     return (
       <li className={className} onClick={onClick}>
-        <img className="tab-item-image" src={imgSource} />
+        <img className="tab-item-image" src={imgSource} alt="" />
         {label}
       </li>
     );

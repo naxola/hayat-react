@@ -1,33 +1,42 @@
 import React, { Component } from "react";
-class PaymentButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+import history from "../../core/helpers/history";
+import { connect } from "react-redux";
+import { addToCart } from "../../core/actions/cart.actions";
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+class PaymentButton extends Component {
+  handleClick = item => {
+    this.props.addToCart(item);
+    history.push("/cart");
+  };
+  divideNumero(number) {
+    let a = (number + "").split(".");
+    return { integer: a[0], decimal: a[1] };
   }
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log("Datos enviados" + this.props.productID);
-    /*
-    const data = new FormData(event.target);
-    
-    fetch('/api/form-submit-url', {
-      method: 'POST',
-      body: data,
-    });
-    */
-  }
+
   render() {
-    console.log(this.props.productID);
+    let precio = this.divideNumero(this.props.Item.price);
     return (
-      <form id="form-prod" onSubmit={this.handleSubmit}>
-        <button type="submit" className="btn-buy">
-          compra ahora . 49<span>.99€</span>
-        </button>
-      </form>
+      <button
+        type="submit"
+        onClick={() => {
+          this.handleClick(this.props.Item);
+        }}
+        className="btn-buy"
+      >
+        compra ahora . {precio.integer}
+        <span>{precio.decimal}€</span>
+      </button>
     );
   }
 }
-
-export default PaymentButton;
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: item => {
+      dispatch(addToCart(item));
+    }
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(PaymentButton);

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Banner from "../../components/banner/banner";
 import Hero from "../../components/hero/hero";
@@ -39,7 +40,6 @@ class HomePage extends Component {
     });
   };
   isInViewport = element => {
-    console.log("llamaa");
     var anchoViewport =
       window.innerWidth || document.documentElement.clientWidth; //Clientwidth da soporte si es ie (evitamos problemas)
     var altoViewport =
@@ -60,6 +60,7 @@ class HomePage extends Component {
 
     return (
       //console.log(this.isInViewport(this.element));
+
       <React.Fragment>
         <Helmet>
           <title>HAYAT The Authentic - PEPTOS</title>
@@ -72,7 +73,7 @@ class HomePage extends Component {
         <Banner />
         <div className="wrapper">
           <section>
-            <Hero productId={this.state.productId} />
+            <Hero item={this.props.items[0]} />
           </section>
           <section>
             <ProductInfo />
@@ -84,12 +85,16 @@ class HomePage extends Component {
             <Features />
           </section>
           <div className={overlyButton}>
-            <PaymentButton productID={this.state.productId} />
+            <PaymentButton Item={this.props.items[0]} />
           </div>
         </div>
       </React.Fragment>
     );
   }
 }
-
-export default HomePage;
+const mapStateToProps = state => {
+  return {
+    items: state.catalog.items
+  };
+};
+export default connect(mapStateToProps)(HomePage);

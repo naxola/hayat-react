@@ -28,7 +28,7 @@ class Hero extends Component {
               Con péptidos, ácido hialurónico, fermentos detox y vitaminas
             </h2>
             <div className="pay-widget">
-              <PaymentButton productID={this.props.productId} />
+              <PaymentButton Item={this.props.item} />
             </div>
           </div>
         </div>

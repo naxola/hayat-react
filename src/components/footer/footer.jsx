@@ -4,9 +4,6 @@ import "./footer.css";
 
 //Se hace así porque es un stateless component
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const preload = {
       data: [
