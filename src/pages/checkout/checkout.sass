@@ -1,0 +1,106 @@
+@import ../../mq.sass
+@import ../../colors.sass
+
+.wrap
+    padding: 0 5%
+    width: 90%
+    max-width: 78.57143em
+    margin: 0 auto
+    display: flex
+    flex: 1 0 auto
+
+    .main
+        display: flex
+        flex-direction: column
+        width: 100%
+
+        +tablet
+            width: 52%
+            padding-right: 6%
+
+
+        .main-header
+            .breadcrum
+                display: none
+                margin-top: 1em
+
+                +tablet
+                    display: block
+                    list-style: none
+                    display: flex
+                    font-size: 0.85714em
+
+
+                .arrow
+                    width: 0.85714em
+                    color: grey
+                    margin: 0 0.5em
+
+                .breadcrum-item-completed
+                    display: flex
+                    align-items: center
+
+                    .breadcrum-item
+                        color: #197bbd
+
+                .breadcrum-item-current
+                    display: flex
+                    align-items: center
+                    font-weight: 700
+
+                    .breadcrum-item
+                        color: #333333
+
+                .breadcrum-item-blank
+                    display: flex
+                    align-items: center
+
+                    .breadcrum-item
+                        color: #737373
+
+        .main-content
+            flex: 1 auto
+
+            .contact-information
+                .section-contact-information
+                    margin-top: 1.5em
+
+                .section-shipping
+                    margin-top: 1.5rem
+
+        .main-footer
+
+    .sidebar
+        display: none
+        position: relative
+        color: #535353
+
+        +tablet
+            display: block
+            width: 38%
+            padding-left: 4%
+            background-position: left top
+            float: right
+
+.section-header
+    position: relative
+    margin-bottom: 1em
+
+    h2
+        padding: 0.14286rem 0
+        font-size: 1.28571em
+        line-height: 1.3em
+        font-weight: 300
+
+.section-content
+    input
+        background-color: white
+        color: #333333
+        border-color: #d9d9d9
+        border: 1px #d9d9d9 solid
+        background-clip: padding-box
+        border-radius: 5px
+        display: block
+        width: 100%
+        padding: 0.92857em 0.78571em
+        word-break: normal

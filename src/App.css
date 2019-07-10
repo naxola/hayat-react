@@ -131,4 +131,39 @@ body p {
   max-width: 100%;
   height: auto;
 }
+
+.row-dinamica {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 769px), print {
+  .row-dinamica {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.field__input {
+  margin: 0.5rem auto;
+}
+
+.field-label {
+  font-size: 0.85714em;
+  font-weight: normal;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-top: 0.42857em;
+  margin-left: 1px;
+  padding: 0 0.91667em;
+  z-index: 1;
+}
 /*# sourceMappingURL=App.css.map */

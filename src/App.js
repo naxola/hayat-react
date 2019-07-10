@@ -11,27 +11,75 @@ import Terms from "./pages/legal/terms";
 import Legal from "./pages/legal/legal";
 import Contact from "./pages/contact/contact";
 import Cart from "./pages/cart/cart";
+import CheckOut from "./pages/checkout/checkout";
 
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./core/helpers/history";
 
+const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
+  <Route
+    {...rest}
+    render={props => (
+      <Layout>
+        <Component {...props} />
+      </Layout>
+    )}
+  />
+);
+const MainLayout = props => (
+  <div>
+    <Header />
+    {props.children}
+    <Footer />
+  </div>
+);
+const SideLayout = props => <div>{props.children}</div>;
 function App() {
   return (
     <div className="App">
       <Router history={history}>
-        <Header />
         <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/pages/nosotros" exact component={NosotrosPage} />
-          <Route path="/pages/faq" exact component={FAQPage} />
-          <Route path="/cookies" exact component={Cookies} />
-          <Route path="/terms" exact component={Terms} />
-          <Route path="/privacy" exact component={Privacy} />
-          <Route path="/legal" exact component={Legal} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/cart" exact component={Cart} />
+          <AppRoute layout={MainLayout} path="/" exact component={HomePage} />
+          <AppRoute
+            layout={MainLayout}
+            path="/pages/nosotros"
+            exact
+            component={NosotrosPage}
+          />
+          <AppRoute
+            layout={MainLayout}
+            path="/pages/faq"
+            exact
+            component={FAQPage}
+          />
+          <AppRoute
+            layout={MainLayout}
+            path="/cookies"
+            exact
+            component={Cookies}
+          />
+          <AppRoute layout={MainLayout} path="/terms" exact component={Terms} />
+          <AppRoute
+            layout={MainLayout}
+            path="/privacy"
+            exact
+            component={Privacy}
+          />
+          <AppRoute layout={MainLayout} path="/legal" exact component={Legal} />
+          <AppRoute
+            layout={MainLayout}
+            path="/contact"
+            exact
+            component={Contact}
+          />
+          <AppRoute layout={MainLayout} path="/cart" exact component={Cart} />
+          <AppRoute
+            layout={SideLayout}
+            path="/checkout"
+            exact
+            component={CheckOut}
+          />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

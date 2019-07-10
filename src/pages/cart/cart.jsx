@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import history from "../../core/helpers/history";
+
 import { addQuantity, subtractQuantity } from "../../core/actions/cart.actions";
 
 import HeroImg from "../../assets/peptos-hero.png";
 import "./cart.css";
 
 class Cart extends Component {
-  state = {};
   handleRemove = id => {
     this.props.removeItem(id);
   };
@@ -18,6 +19,9 @@ class Cart extends Component {
   };
   handleSubtractQuantity = id => {
     this.props.subtractQuantity(id);
+  };
+  handleBuyClick = () => {
+    history.push("./checkout");
   };
   divideNumero(number) {
     let a = (number + "").split(".");
@@ -80,19 +84,27 @@ class Cart extends Component {
         </div>
         {addedItems}
         <div className="cart-list-footer">
-          <form className="cart-form">
+          <form className="cart-form" onSubmit={() => this.handleBuyClick()}>
             <div className="cart-resume-total">
               <div className="terms">
                 <input
                   id="checkTerms"
                   type="checkbox"
-                  name="attributes[privacy]"
                   value="true"
                   required="required"
                   className="terms-checkbox"
                 />
-                He leído y acepto la Política de Privacidad y los Términos y
-                Condiciones de Hayat
+                <label className="terms-text">
+                  He leído y acepto la{" "}
+                  <Link to="/privacy" className="link-terms">
+                    Politica de privacidad
+                  </Link>{" "}
+                  y los{" "}
+                  <Link to="/terms" className="link-terms">
+                    Términos y condiciones
+                  </Link>{" "}
+                  de Hayat
+                </label>
               </div>
               <div className="price">
                 <span className="price-text">Precio total</span>
@@ -106,7 +118,9 @@ class Cart extends Component {
             </div>
             <div className="cart-resume-actions">
               <a className="cart-back">Volver</a>
-              <button className="button">comprar</button>
+              <button type="submit" className="button">
+                comprar
+              </button>
             </div>
           </form>
         </div>
@@ -121,7 +135,7 @@ class Cart extends Component {
           <title>Carrito</title>
         </Helmet>
         <div className="wrapper">
-          <div className="container-70">
+          <div className="container-80">
             <section>
               <div className="page">
                 <h1>Carrito</h1>
