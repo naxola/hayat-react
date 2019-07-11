@@ -3,11 +3,17 @@
 
 .wrap
     padding: 0 5%
-    width: 90%
+    width: 100%
     max-width: 78.57143em
     margin: 0 auto
     display: flex
     flex: 1 0 auto
+    font-size: 14px
+    line-height: 1.3em
+
+    +tablet
+        width: 80%
+
 
     .main
         display: flex
@@ -19,21 +25,28 @@
             padding-right: 6%
 
 
+        img
+            border: 0
+            max-width: 100%
+
+        .logo
+            display: block
+            vertical-align: middle
+
         .main-header
             .breadcrum
                 display: none
                 margin-top: 1em
+                font-size: 0.85714em
 
                 +tablet
                     display: block
                     list-style: none
                     display: flex
-                    font-size: 0.85714em
 
 
                 .arrow
                     width: 0.85714em
-                    color: grey
                     margin: 0 0.5em
 
                 .breadcrum-item-completed
@@ -60,15 +73,34 @@
 
         .main-content
             flex: 1 auto
+            padding-bottom: 1.5em
 
-            .contact-information
-                .section-contact-information
-                    margin-top: 1.5em
+            h2
+                color: #333333
+                font-size: 1.28571em
+                line-height: 1.3em
+                font-weight: 400
 
-                .section-shipping
-                    margin-top: 1.5rem
+            a
+                padding-top: 1.5em
+                text-align: center
+                color: #197bbd
+                transition: color 0.2s ease-in-out
+                cursor: pointer
 
-        .main-footer
+                &:hover
+                    color: #15669d
+
+            .field-input
+                background-color: white
+                color: #333333
+                border-color: #d9d9d9
+
+        .main__footer
+            a
+                color: grey
+
+            .section-contact-information
 
     .sidebar
         display: none
@@ -82,25 +114,262 @@
             background-position: left top
             float: right
 
+.logo__image--large
+    max-height: 3.57143em
+
+.logo__image
+    display: inline-block
+
+.section
+    position: relative
+    padding-top: 2em
+
+    +tablet
+        padding-top: 3em
+
+
+    &:first-child
+        padding-top: 0
+
 .section-header
     position: relative
     margin-bottom: 1em
 
-    h2
-        padding: 0.14286rem 0
-        font-size: 1.28571em
-        line-height: 1.3em
-        font-weight: 300
+    +tablet
+        margin-bottom: 1.5em
 
 .section-content
-    input
-        background-color: white
-        color: #333333
-        border-color: #d9d9d9
-        border: 1px #d9d9d9 solid
-        background-clip: padding-box
-        border-radius: 5px
+    zoom: 1
+
+    &:before, &:after
+        content: ""
+        display: table
+
+    &:after
+        clear: both
+
+.section--half-spacing-top
+    padding-top: 1em
+
+    +tablet
+        padding-top: 1.5em
+
+.checkbox-wrapper
+    display: table
+    box-sizing: border-box
+    width: 100%
+    zoom: 1
+
+    &:last-child
+        margin-bottom: 0
+
+.checkbox__input
+    padding-right: 0.75em
+    white-space: nowrap
+    display: table-cell
+
+.checkbox__label
+    cursor: pointer
+    vertical-align: middle
+    color: #545454
+    line-height: 1.3em
+    overflow-wrap: break-word
+    word-break: break-word
+
+.input-checkbox
+    background-color: white
+    color: #333333
+    border-color: #d9d9d9
+    border-radius: 4px
+    border-color: #d9d9d9
+    width: 18px
+    height: 18px
+    box-shadow: 0 0 0 0 #197bbd inset
+    transition: all 0.2s ease-in-out
+    position: relative
+    cursor: pointer
+    vertical-align: -4px
+    border: 1px solid
+    white-space: nowrap
+
+    &:after
+        content: ""
         display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 10px
+        height: 8px
+        margin-left: -5px
+        margin-top: -4px
+        transition: all 0.2s ease-in-out 0.1s
+        opacity: 0
+
+.floating-labels
+    .field__label
+        font-size: 0.8em
+        font-weight: normal
+        position: absolute
+        top: 0
         width: 100%
-        padding: 0.92857em 0.78571em
-        word-break: normal
+        margin-top: 0.42857em
+        margin-left: 1px
+        padding: 0 0.91667em
+        z-index: 1
+        color: #737373
+        user-select: none
+        box-sizing: border-box
+        pointer-events: none
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        opacity: 1
+
+    .field--show-floating-label
+        .field-input
+            padding-top: 1.5em
+            padding-bottom: 0.35714em
+
+.animate-floating-labels
+    .field-input
+        transition: all 0.2s ease-out
+
+.fieldset
+    margin: -0.42857em
+    zoom: 1
+
+    &:before, &:after
+        content: ""
+        display: table
+
+    &:after
+        clear: both
+
+.field-input
+    border: 1px transparent solid
+    background-clip: padding-box
+    border-radius: 5px
+    display: block
+    box-sizing: border-box
+    width: 100%
+    padding: 0.92857em 0.78571em
+    word-break: normal
+
+.field__input--select
+    padding-right: 2.07143em
+    white-space: nowrap
+
+.field__input-wrapper
+    position: relative
+
+.field__input-wrapper-select
+    position: relative
+
+.field__label
+    text-align: left
+    font-weight: 500
+    margin: 0.5em 0
+    display: none
+
+.field__label--visible
+    display: block
+
+.field--show-floating-label
+
+.field
+    width: 100%
+    float: left
+    padding: 0.42857em
+    box-sizing: border-box
+
+.field-half
+    width: 100%
+
+    +tablet
+        width: 50%
+
+.field-third
+    width: 100%
+
+    +tablet
+        width: 33.33333%
+
+.btn
+    width: 100%
+    padding-top: 1.75em
+    padding-bottom: 1.75em
+    background-color: $pay-button
+    background-clip: border-box
+    box-sizing: border-box
+    border: 1px transparent solid
+    border-radius: 5px
+    color: $pay-button-text
+    font-weight: 500
+    padding: 1.4em 1.7em
+    text-align: center
+
+    +tablet
+        width: auto
+        cursor: pointer
+        display: inline-block
+        position: relative
+
+
+    &:hover
+        background-color: $pau-button-hover
+
+.step__footer
+    z-index: 2
+    position: relative
+    margin-top: 1em
+    display: block
+
+.step__footer__continue-btn
+    +tablet
+        float: right
+
+.step__footer__previous-link-content
+    vertical-align: middle
+
+.main__footer
+    padding: 1em 0
+    border-top: 1px solid #e6e6e6
+
+.policy-list
+    zoom: 1
+
+.policy-list__item
+    float: left
+    font-size: 0.85714em
+    margin-right: 1.5em
+    margin-bottom: 0.5em
+
+input
+    line-height: normal
+    background: transparent
+    letter-spacing: normal
+    word-spacing: normal
+    text-transform: none
+    text-indent: 0px
+    text-shadow: none
+    cursor: text
+
+label
+    cursor: default
+
+select
+    text-transform: none
+    padding: 0.5em
+
+button
+    overflow: visible
+    text-transform: none
+
+ul
+    margin: 0
+    padding: 0
+    list-style-type: none
+    display: block
+
+li
+    display: list-item

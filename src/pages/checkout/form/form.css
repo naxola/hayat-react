@@ -1,0 +1,13 @@
+.section-contact-information {
+  width: 100%;
+}
+
+.section {
+  position: relative;
+  padding-top: 2em;
+}
+
+.section:first-child {
+  padding-top: 0;
+}
+/*# sourceMappingURL=form.css.map */

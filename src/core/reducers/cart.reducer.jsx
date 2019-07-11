@@ -4,7 +4,7 @@ import { cartConstants } from "../constants";
 
 const initialState = {
   addedItems: [
-    
+    /*
     {
       id: 2,
       title: "Booster Serum",
@@ -12,7 +12,7 @@ const initialState = {
       price: 4.99,
       img: "Item1",
       quantity: 1
-    }
+    }*/
   ],
   totalPrice: 0
 };
