@@ -19,6 +19,7 @@ class HomePage extends Component {
   componentWillMount() {}
   componentDidMount() {
     window.addEventListener("scroll", this.listenToScroll);
+    window.scrollTo(0, 0);
     /*  var element = document.getElementById("form-prod");
     element.addEventListener("show", this.isInViewport);*/
   }

@@ -11,9 +11,10 @@ import Terms from "./pages/legal/terms";
 import Legal from "./pages/legal/legal";
 import Contact from "./pages/contact/contact";
 import Cart from "./pages/cart/cart";
-import CheckOut from "./pages/checkout/checkout";
+import Information from "./pages/checkout/information/information";
+import Payment from "./pages/checkout/payment/payment";
 
-import { Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import history from "./core/helpers/history";
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
@@ -37,7 +38,7 @@ const SideLayout = props => <div>{props.children}</div>;
 function App() {
   return (
     <div className="App">
-      <Router history={history}>
+      <HashRouter history={history}>
         <Switch>
           <AppRoute layout={MainLayout} path="/" exact component={HomePage} />
           <AppRoute
@@ -75,12 +76,18 @@ function App() {
           <AppRoute layout={MainLayout} path="/cart" exact component={Cart} />
           <AppRoute
             layout={SideLayout}
-            path="/checkout"
+            path="/checkout/information"
             exact
-            component={CheckOut}
+            component={Information}
+          />
+          <AppRoute
+            layout={SideLayout}
+            path="/checkout/payment"
+            exact
+            component={Payment}
           />
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

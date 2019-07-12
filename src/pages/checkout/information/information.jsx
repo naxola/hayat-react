@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import arrow from "../../assets/right-arrow.svg";
-import logo from "../../assets/logo-corto.png";
+import arrow from "../../../assets/right-arrow.svg";
+import logo from "../../../assets/logo-corto.png";
 import ContactForm from "./form/form";
-import "./checkout.css";
+import "./information.css";
 
-class CheckOut extends Component {
+class Information extends Component {
   state = {};
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <React.Fragment>
@@ -72,4 +75,4 @@ class CheckOut extends Component {
   }
 }
 
-export default CheckOut;
+export default Information;

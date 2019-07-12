@@ -3,6 +3,9 @@ import { Helmet } from "react-helmet";
 
 class Legal extends Component {
   state = {};
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <React.Fragment>

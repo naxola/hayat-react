@@ -1,12 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./form.css";
 
 class ContactForm extends Component {
-  state = {};
+  state = {
+    toPayment: false
+  };
+  handleSubmit = () => {
+    /*
+    saveUser(user)
+      .then(() => this.setState(() => ({
+        toDashboard: true
+      })))
+      */
+    this.setState(() => ({
+      toPayment: true
+    }));
+  };
   render() {
+    if (this.state.toPayment === true) {
+      return <Redirect to="/checkout/payment" />;
+    }
     return (
-      <form action="#" className="floating-labels animate-floating-labels">
+      <form
+        action="#"
+        onSubmit={this.handleSubmit}
+        className="floating-labels animate-floating-labels"
+      >
         <div className="section section-contact-information">
           <div className="section-header">
             <h2>Información de contacto</h2>
@@ -252,7 +273,7 @@ class ContactForm extends Component {
             type="submit"
             className="step__footer__continue-btn btn"
           >
-            Continuar con envíos
+            Ir a caja
           </button>
           <Link to="/cart" className="">
             Volver al carrito

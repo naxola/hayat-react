@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import history from "../../core/helpers/history";
+import { Redirect } from "react-router-dom";
 
 import { addQuantity, subtractQuantity } from "../../core/actions/cart.actions";
 
@@ -10,6 +10,12 @@ import HeroImg from "../../assets/peptos-hero.png";
 import "./cart.css";
 
 class Cart extends Component {
+  state = {
+    toCheckOut: false
+  };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   handleRemove = id => {
     this.props.removeItem(id);
   };
@@ -21,13 +27,18 @@ class Cart extends Component {
     this.props.subtractQuantity(id);
   };
   handleBuyClick = () => {
-    history.push("./checkout");
+    this.setState(() => ({
+      toCheckOut: true
+    }));
   };
   divideNumero(number) {
     let a = (number + "").split(".");
     return { integer: a[0], decimal: a[1] };
   }
   render() {
+    if (this.state.toCheckOut === true) {
+      return <Redirect to="/checkout/information" />;
+    }
     let totalPrice = this.divideNumero(
       Math.round(this.props.cartState.totalPrice * 100) / 100
     );

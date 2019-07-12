@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import history from "../../core/helpers/history";
 import { connect } from "react-redux";
 import { addToCart } from "../../core/actions/cart.actions";
+import { Redirect } from "react-router-dom";
 
 class PaymentButton extends Component {
+  state = {
+    toCart: false
+  };
   handleClick = item => {
     this.props.addToCart(item);
-    history.push("/cart");
+    this.setState(() => ({
+      toDashboard: true
+    }));
   };
   divideNumero(number) {
     let a = (number + "").split(".");
@@ -14,6 +19,10 @@ class PaymentButton extends Component {
   }
 
   render() {
+    if (this.state.toDashboard === true) {
+      return <Redirect to="/cart" />;
+    }
+
     let precio = this.divideNumero(this.props.Item.price);
     return (
       <button
